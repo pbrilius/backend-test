@@ -1,0 +1,5 @@
+{
+    "require": {
+        "symfony/console": "v4.0.4"
+    }
+}
