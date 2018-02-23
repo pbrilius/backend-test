@@ -7,15 +7,16 @@ namespace Samknows\Command;
  *
  * @author paul
  */
-class SearchCommand
+class SearchCommand extends Command
 {
+    protected static $defaultName = 'app:search';
+    
     protected function configure()
     {
         $this
-                // the name of the command (the part after "bin/console")
-                ->setName('app:aggregater')
-                ->setDescription('Aggregates the data into the'
-                    . ' searchable fields'
+                ->setName('app:search')
+                ->setDescription('Searches data for the entries following'
+                    . ' the search conditions'
                 )
                 ->setDefinition(
                     new InputDefinition(array(
@@ -24,13 +25,17 @@ class SearchCommand
                     new InputOption('cat', 'c', InputOption::VALUE_OPTIONAL),
                     ))
                 )
-                ->setHelp('This command allows you to create a user...')
+                ->setHelp('This command allows search data for entries'
+                        . ' mathing search conditions')
         ;
     }
     
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello World');
+        $input->get($arguments);
+        $conditions = $arguments;
+        $response = $this->searchModel->search($conditions);
+        $output->writeln($response);
     }
 }

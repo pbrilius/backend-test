@@ -6,22 +6,53 @@ namespace Samknows\Command;
  *
  * @author paul
  */
-class LoaddataCommand
+class LoaddataCommand extends Command
 {
     
-    private $logger;
-    //put your code here
+    protected static $defaultName = 'app:loaddata';
     
-    protected function configure()
+    private $logger;
+    private $loaddataModel;
+    
+    public function __construct($logger, $loaddataModel)
+    {
+        $this->logger        = $logger;
+        $this->loaddataModel = $loaddataModel;
+    }
+
+    
+    public function getLogger()
+    {
+        return $this->logger;
+    }
+
+    public function getLoaddataModel()
+    {
+        return $this->loaddataModel;
+    }
+
+    public function setLogger($logger)
+    {
+        $this->logger = $logger;
+        return $this;
+    }
+
+    public function setLoaddataModel($loaddataModel)
+    {
+        $this->loaddataModel = $loaddataModel;
+        return $this;
+    }
+
+        protected function configure()
     {
         $this
-            ->setName('app:sunshine')
-            ->setDescription('Good morning!');
+            ->setName('app:loaddata')
+            ->setDescription('Loading data into database'
+                    . ' from CSV file');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->logger->info('Waking up the sun');
-        // ...
+        $this->loaddataModel->loadData();
     }
 }

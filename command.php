@@ -5,9 +5,10 @@ require __DIR__.'/vendor/autoload.php';
 use Samknows\Command\LoaddataCommand;
 use Samknows\Command\AggregateCommand;
 use Samknows\Command\SearchCommand;
-use Symfony\Component\Console\Application;
+use Samknows\Tool\Application;
 
-$application = new Application('echo', '1.0.0');
+$application = new Application(Samknows\APPLICATION_NAME,
+        Samknows\APPLICATION_VERSION);
 
 $loaddataCommand = new LoaddataCommand();
 $application->add($loaddataCommand);
