@@ -9,7 +9,7 @@ parameters:
         dbname: backend_test
         charset: utf8mb4
         collation: utf8mb4_unicode_ci
-    orm.paths: ['../mappings/']
+    orm.paths: ['../../mappings/']
 services:
     _defaults:
         autowire: true
