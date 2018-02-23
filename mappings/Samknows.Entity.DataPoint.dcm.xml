@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Samknows\Entity\DataPoint" table="data_point">
+    <indexes>
+      <index name="data_point_download_idx" columns="download"/>
+      <index name="data_point_upload_idx" columns="upload"/>
+      <index name="data_point_latency_idx" columns="latency"/>
+      <index name="data_point_packet_loss_idx" columns="packet_loss"/>
+      <index name="data_point_unit_id_idx" columns="unit_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="unitId" type="integer" column="unit_id" nullable="false">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <field name="download" type="integer" column="download" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="upload" type="integer" column="upload" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="latency" type="integer" column="latency" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="packetLoss" type="integer" column="packet_loss" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="timestamp" type="date" column="timestamp" nullable="false"/>
+  </entity>
+</doctrine-mapping>

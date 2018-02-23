@@ -1,13 +1,14 @@
 parameters:
     mode: development
     orm.db:
-        driver: pdo_mysql
-        host: localhost
+        driver: mysqli
+        host: 127.0.0.1
         port: 3306
-        init: 'SET names utf8mb4'
-        user: 'backend_test'
-        password: 'backend_test'
-        dbname: 'backend_test'
+        user: backend_test
+        password: backend_test
+        dbname: backend_test
+        charset: utf8mb4
+        collation: utf8mb4_unicode_ci
     orm.paths: ['../mappings/']
 services:
     _defaults:
