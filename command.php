@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 $container = new ContainerBuilder();
 $loader = new YamlFileLoader($container, new FileLocator(__DIR__ ));
-$loader->load('config/services.yaml');
+$loader->load('config/services.yml');
 
 $application = new Application(Samknows\APPLICATION_NAME,
         Samknows\APPLICATION_VERSION);
