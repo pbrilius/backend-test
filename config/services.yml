@@ -1,0 +1,41 @@
+mode: development
+orm:
+    db:
+        driver: pdo_mysql,
+        host: localhost,
+        port: 3306
+        init: 'SET names utf8mb4'
+        user: 'backend_test'
+        password: 'backend_test'
+        dbname: 'backend_test'
+    paths: '../mappings/'
+    development: 
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+    Doctrine\ORM\EntityManager:
+        factory: 'Samknows\Factory\EntityManager::createEntityManager'
+        arguments: ['@orm.db', '@orm.paths', '@mode']
+        public: false
+    entity.manager:
+        alias: Doctrine\ORM\EntityManager
+    Samknows\Command\AggregateCommand:
+        tags:
+            - { name: 'console.command', command: 'samknows:aggregate' }
+    Samknows\Command\LoaddataCommand:
+        tags:
+            - { name: 'console.command', command: 'samknows:loaddata' }
+    Samknows\Command\SearchCommand:
+        tags:
+            - { name: 'console.command', command: 'samknows:search' }
+    Samknows\Model\SearchModel:
+        tags:
+            - { name: 'application.model', command: 'search' }
+    Samknows\Model\LoadDataModel:
+        tags:
+            - { name: 'application.model', command: 'loaddata' }
+    Samknows\Model\AggregateModel:
+        tags:
+            - { name: 'application.model', model: 'aggregate' }

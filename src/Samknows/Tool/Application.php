@@ -12,5 +12,5 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class Application extends Application
 {
-    //put your code here
+    
 }
