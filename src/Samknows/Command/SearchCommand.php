@@ -19,11 +19,9 @@ class SearchCommand extends Command
                     . ' the search conditions'
                 )
                 ->setDefinition(
-                    new InputDefinition(array(
-                    new InputOption('foo', 'f'),
-                    new InputOption('bar', 'b', InputOption::VALUE_REQUIRED),
-                    new InputOption('cat', 'c', InputOption::VALUE_OPTIONAL),
-                    ))
+                    new InputDefinition([
+                        new InputOption('data-file', 'f', InputOption::VALUE_REQUIRED),
+                    ])
                 )
                 ->setHelp('This command allows search data for entries'
                         . ' mathing search conditions')

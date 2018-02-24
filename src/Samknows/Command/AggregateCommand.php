@@ -51,7 +51,6 @@ class AggregateCommand extends Command
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello World');
         $this->aggregateModel->agregate();
     }
 

@@ -1,7 +1,7 @@
 parameters:
     mode: development
     orm.db:
-        driver: mysqli
+        driver: pdo_mysql
         host: 127.0.0.1
         port: 3306
         user: backend_test
@@ -15,14 +15,14 @@ services:
         autowire: true
         autoconfigure: true
     Doctrine\ORM\EntityManager:
-        factory: 'Samknows\Factory\EntityManagerFactory::createEntityManager'
+        factory: 'Samknows\Factory\Doctrine\EntityManagerFactory::createEntityManager'
         arguments: ['%orm.db%', '%orm.paths%', '%mode%']
         public: false
     entity_manager: '@Doctrine\ORM\EntityManager'
     Samknows\Command\AggregateCommand:
         tags:
             - { name: 'console.command', command: 'samknows:aggregate' }
-    Samknows\Command\LoaddataCommand:
+    Samknows\Command\LoadDataCommand:
         tags:
             - { name: 'console.command', command: 'samknows:loaddata' }
     Samknows\Command\SearchCommand:
