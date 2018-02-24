@@ -1,11 +1,22 @@
 <?php
 
 use Doctrine\ORM\EntityManager;
+use Samknows\Model\AggregateModel;
+use Samknows\Model\LoadDataModel;
+use Samknows\Model\SearchModel;
+use Samknows\Factory\Doctrine\EntityManagerFactory;
+use Samknows\Factory\Model\AggregateModelFactory;
+use Samknows\Factory\Model\LoadDataModelFactory;
+use Samknows\Factory\Model\SearchModelFactory;
+use Samknows\Command\AggregateCommand;
+use Samknows\Command\FixtureCommand;
+use Samknows\Command\LoadDataCommand;
+use Samknows\Command\SearchCommand;
 use function DI\env;
 use function DI\get;
 use function DI\string;
 use function DI\factory;
-use function DI\object;
+use function DI\autowire;
 
 chdir(__DIR__);
 
@@ -25,23 +36,23 @@ $config['dbParams']                   = [
 $config['path.tmp']                   = string('{document.root}/tmp');
 $config['path.initialize']            = string('{document.root}/initialize');
 $config['path.fixtures']              = string('{path.initialize}/fixtures.yml');
-$config['path.mappings']              = [string('{document.root}/mapping')];
+$config['path.mappings']              = [string('{document.root}/mappings')];
 $config['path.proxy']                 = [string('{path.tmp}/proxies')];
 $config['path.cache']                 = string('{path.tmp}/cache');
 $config['path.metadata']              = string('{path.tmp}/metadata');
-$config[Guard::class]                   = object(Guard::class);
-$config[EntityManager::class]           = factory([EntityManagerFactory::class, 'create'])
+$config[EntityManager::class]         = factory([EntityManagerFactory::class, 'create'])
         ->parameter('dbParams', get('dbParams'))
-        ->parameter('applicationMode', get('applicationMode'))
         ->parameter('proxyDir', get('path.proxy'))
-        ->parameter('paths', get('path.mappings'))
-        ->parameter('redisParams', get('redisParams'))
-        ->parameter('regionsParams', get('regionsParams'))
-        ->parameter('proxyNamespace', get('proxyNamespace'))
-        ->parameter('entityNamespaces', get('entityNamespaces'));
-
+        ->parameter('applicationMode', get('applicationMode'))
+        ->parameter('paths', get('path.mappings'));
 $config['doctrine.entity_manager'] = get(EntityManager::class);
-$config[FixtureCommand::class]     = object(FixtureCommand::class)
-        ->constructor(get('doctrine.entity_manager'), get('path.fixtures'));
+$config[AggregateModel::class] = autowire();
+$config[LoadDataModel::class] = autowire();
+$config[SearchModel::class] = autowire();
+$config[FixtureCommand::class] = autowire()
+        ->constructorParameter('config', get('path.fixtures'));
+$config[AggregateCommand::class] = autowire();
+$config[LoadDataCommand::class] = autowire();
+$config[SearchCommand::class] = autowire();
 
 return $config;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Samknows\Factory;
+namespace Samknows\Factory\Doctrine;
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;

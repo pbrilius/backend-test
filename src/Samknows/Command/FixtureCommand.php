@@ -1,6 +1,6 @@
 <?php
 
-namespace Pixelpitch\Easynote\Command;
+namespace Samknows\Command;
 
 use Symfony\Component\Console\Output\OutputInterface;
 use Doctrine\ORM\EntityManager;
