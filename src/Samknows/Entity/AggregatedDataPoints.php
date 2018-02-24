@@ -4,6 +4,8 @@ namespace Samknows\Entity;
 
 /**
  * AggregatedDataPoints
+ * 
+ * @ORM\Entity(repositoryClass="Samknows\Repository\AggregatedDataPoints")
  */
 class AggregatedDataPoints
 {

@@ -2,6 +2,12 @@
 namespace Samknows\Command;
 
 use Samknows\Model\LoadDataModel;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Description of LoaddataCommand
@@ -19,19 +25,19 @@ class LoadDataCommand extends Command
      */
     private $loadDataModel;
     
-    public function __construct(LoadDataModel $loaddataModel)
+    public function __construct(LoadDataModel $loadDataModel)
     {
-        $this->loaddataModel = $loaddataModel;
+        $this->loadDataModel = $loadDataModel;
     }
 
     public function getLoaddataModel()
     {
-        return $this->loaddataModel;
+        return $this->loadDataModel;
     }
 
-    public function setLoaddataModel($loaddataModel)
+    public function setLoaddataModel($loadDataModel)
     {
-        $this->loaddataModel = $loaddataModel;
+        $this->loadDataModel = $loadDataModel;
         return $this;
     }
 
@@ -49,6 +55,6 @@ class LoadDataCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->loaddataModel->loadData();
+        $this->loadDataModel->loadData();
     }
 }

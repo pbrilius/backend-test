@@ -39,6 +39,8 @@ class LoadDataModel
         $dataPointRepository = $this->getDataPointRepository();
         $handle = fopen($csvFile, 'r');
         while ($dataEntry = fgetcsv($handle) !== null) {
+            var_dump($dataEntry);
+            continue;
             $dataPoint = new DataPoint();
             $dataPoint->setDownload($dataEntry['download']);
             $dataPoint->setUpload($dataEntry['upload']);

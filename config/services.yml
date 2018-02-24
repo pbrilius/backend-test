@@ -25,15 +25,20 @@ services:
     Samknows\Command\LoadDataCommand:
         tags:
             - { name: 'console.command', command: 'samknows:loaddata' }
+        arguments: ['Samknows\Model\LoadDataModel']
+        autowire: true
     Samknows\Command\SearchCommand:
         tags:
             - { name: 'console.command', command: 'samknows:search' }
     Samknows\Model\SearchModel:
+        factory: 'Samknows\Factory\Model\SearchModelFactory'
         tags:
             - { name: 'application.model', command: 'search' }
     Samknows\Model\LoadDataModel:
+        factory: 'Samknows\Factory\Model\LoadDataModelFactory'
         tags:
             - { name: 'application.model', command: 'loaddata' }
     Samknows\Model\AggregateModel:
+        factory: 'Samknows\Factory\Model\AggregateModelFactory'
         tags:
             - { name: 'application.model', model: 'aggregate' }

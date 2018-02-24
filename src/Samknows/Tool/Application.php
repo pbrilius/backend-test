@@ -2,7 +2,7 @@
 
 namespace Samknows\Tool;
 
-use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Input\InputInterface;
 
 /**
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputInterface;
  *
  * @author paul
  */
-class Application extends Application
+class Application extends ConsoleApplication
 {
     
 }

@@ -4,7 +4,7 @@ composer install
 cp config/services.yml.dist config/services.yml
 ```
 
-#Elaboration
+# Elaboration
 
 > Upon more time dedicated for elaborating the setup, the following points
 would be implemented:

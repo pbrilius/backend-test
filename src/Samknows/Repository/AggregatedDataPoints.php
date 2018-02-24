@@ -18,7 +18,7 @@ class AggregatedDataPoints extends EntityRepository
      */
     private $qb;
     
-    public function __construct($qb)
+    public function __construct()
     {
         $this->qb = $this->createQueryBuilder('adp')
                 ->from(self::class, 'adp');
@@ -35,8 +35,8 @@ class AggregatedDataPoints extends EntityRepository
         return $this;
     }
 
-    public function search()
+    public function search($conditions)
     {
-        
+        $this->qb;
     }
 }

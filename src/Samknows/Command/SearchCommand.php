@@ -2,6 +2,14 @@
 
 namespace Samknows\Command;
 
+use Samknows\Model\LoadDataModel;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
 /**
  * Description of SearchCommand
  *
@@ -20,7 +28,9 @@ class SearchCommand extends Command
                 )
                 ->setDefinition(
                     new InputDefinition([
-                        new InputOption('data-file', 'f', InputOption::VALUE_REQUIRED),
+                        new InputOption('unit', 'u', InputOption::VALUE_REQUIRED),
+                        new InputOption('metric', 'm', InputOption::VALUE_REQUIRED),
+                        new InputOption('hour', 'h', InputOption::VALUE_REQUIRED),
                     ])
                 )
                 ->setHelp('This command allows search data for entries'
