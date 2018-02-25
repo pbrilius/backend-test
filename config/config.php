@@ -40,15 +40,14 @@ $config['path.mappings']              = [string('{document.root}/mappings')];
 $config['path.proxy']                 = [string('{path.tmp}/proxies')];
 $config['path.cache']                 = string('{path.tmp}/cache');
 $config['path.metadata']              = string('{path.tmp}/metadata');
-$config[EntityManager::class]         = factory([EntityManagerFactory::class, 'create'])
+$config[EntityManager::class]         = factory([new EntityManagerFactory, 'create'])
         ->parameter('dbParams', get('dbParams'))
-        ->parameter('proxyDir', get('path.proxy'))
-        ->parameter('applicationMode', get('applicationMode'))
-        ->parameter('paths', get('path.mappings'));
+        ->parameter('mode', get('path.proxy'))
+        ->parameter('applicationMode', get('applicationMode'));
 $config['doctrine.entity_manager'] = get(EntityManager::class);
-$config[AggregateModel::class] = autowire();
-$config[LoadDataModel::class] = autowire();
-$config[SearchModel::class] = autowire();
+$config[AggregateModel::class] = factory([new AggregateModelFactory(), 'create']);
+$config[LoadDataModel::class] = factory([new LoadDataModelFactory(), 'create']);
+$config[SearchModel::class] = factory([new SearchModelFactory(), 'create']);
 $config[FixtureCommand::class] = autowire()
         ->constructorParameter('config', get('path.fixtures'));
 $config[AggregateCommand::class] = autowire();
