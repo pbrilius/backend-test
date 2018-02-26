@@ -22,7 +22,7 @@ abstract class DataPoint extends EntityRepository
     
     public function __construct(EntityManager $em)
     {
-        $metadata = new ClassMetadata($this->entity());
+        $metadata = new ClassMetadata(DataPoint::class);
         parent::__construct($em, $metadata);
         $this->qb = $this->createQueryBuilder('dp')
             ->select('dp.*')
