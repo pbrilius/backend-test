@@ -41,7 +41,6 @@ class LoadDataModel
     {
         $entityManager = $this->getEntityManager();
         var_dump(get_class($entityManager));
-        var_dump(get_class($em));
 //        die;
         var_dump('$documentRoot');
         var_dump($this->documentRoot . '/' . $fileName);
@@ -57,11 +56,22 @@ class LoadDataModel
             foreach (\Samknows\METRICS as $metricsUnit) {
                 foreach ($unit->metrics->{$metricsUnit} as $dataEntry) {
                     $dataPoint = new DataPointEntity();
+                    var_dump('set' . mb_convert_case($metricsUnit, MB_CASE_TITLE));
                     call_user_func([$dataPoint, 'set' . mb_convert_case($metricsUnit, MB_CASE_TITLE)],
                         $dataEntry->value);
-                    $dataPoint->setTimestamp($dataEntry->timestamp);
-                    $entityManager->persist($dataPoint);
-                    $entityManager->flush();
+                    $dataPoint->setUnitId($unit->unit_id);
+                    $dataPoint->setTimestamp(new \DateTime($dataEntry->timestamp));
+                    var_dump('$dataPoint dump');
+                    var_dump($dataPoint->getUnitId());
+                    var_dump($dataPoint->getTimestamp());
+                    try {
+                        $entityManager->persist($dataPoint);
+                        $entityManager->flush();
+                    } catch (\Exception $e) {
+                        var_dump($e->getMessage());
+                    }
+                    
+                    die;
                     continue;
                     $dataPoint->setDownload($dataEntry->download);
                     $dataPoint->setUpload($dataEntry->upload);
