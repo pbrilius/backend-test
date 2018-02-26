@@ -41,9 +41,8 @@ class LoadDataModel
     {
         $entityManager = $this->getEntityManager();
         var_dump(get_class($entityManager));
-        $em = $entityManager->getEntityManager();
         var_dump(get_class($em));
-        die;
+//        die;
         var_dump('$documentRoot');
         var_dump($this->documentRoot . '/' . $fileName);
 //        $handle = fopen($this->documentRoot . '/' . $fileName, 'r');
@@ -72,11 +71,6 @@ class LoadDataModel
                     $dataPoint->setTimestamp((new \DateTime())->format('Y-m-d H:i:s'));
                 }
             }
-//            foreach ($unit->metrics as $dataEntry) {
-//                var_dump($dataEntry);
-//                die;
-//                
-//            }
         }
         return;
         while (($dataEntry = fgetcsv($handle)) !== null) {
