@@ -27,6 +27,7 @@ class EntityManagerFactory
         $config->setProxyDir($proxyDir);
         $config->setProxyNamespace($proxyNamespace);
         $config->setEntityNamespaces($entityNamespaces);
+        $config->addCustomStringFunction('date_format', 'Mapado\MysqlDoctrineFunctions\DQL\MysqlDateFormat');
         if ($isDevMode) {
             $config->setAutoGenerateProxyClasses(AbstractProxyFactory::AUTOGENERATE_EVAL);
         } else {

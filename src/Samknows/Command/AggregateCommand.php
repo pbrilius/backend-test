@@ -52,7 +52,7 @@ class AggregateCommand extends Command
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->aggregateModel->aggregateDataPoints();
+        var_dump($this->aggregateModel->aggregateDataPoints());
     }
 
 }

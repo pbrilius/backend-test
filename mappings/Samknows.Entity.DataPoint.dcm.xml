@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="Samknows\Entity\DataPoint" table="data_point">
+  <entity name="Samknows\Entity\DataPoint" table="data_point"
+          repository-class="Samknows\Repository\DataPoint">
     <indexes>
       <index name="data_point_download_idx" columns="download"/>
       <index name="data_point_upload_idx" columns="upload"/>

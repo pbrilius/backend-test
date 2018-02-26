@@ -32,7 +32,7 @@ $application->add($container->get(SearchCommand::class));
 
 $application->setDefaultCommand($container
         ->get(LoaddataCommand::class)
-        ->getName(), true);
+        ->getName(), false);
 
 $application->run();
 

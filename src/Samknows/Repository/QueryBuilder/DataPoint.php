@@ -4,7 +4,8 @@ namespace Samknows\Repository\QueryBuilder;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
-use Samknows\Entity\DataPoint;
+use Doctrine\ORM\EntityManager;
+use Samknows\Entity\DataPoint as DataPointEntity;
 use Doctrine\ORM\Mapping\ClassMetadata;
 
 /**
@@ -22,8 +23,9 @@ abstract class DataPoint extends EntityRepository
     
     public function __construct(EntityManager $em)
     {
-        $metadata = new ClassMetadata(DataPoint::class);
+        $metadata = new ClassMetadata(DataPointEntity::class);
         parent::__construct($em, $metadata);
+
         $this->qb = $this->createQueryBuilder('dp')
             ->select('dp.*')
             ->from(DataPoint::class, 'dp');

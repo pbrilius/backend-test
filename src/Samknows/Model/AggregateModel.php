@@ -37,7 +37,7 @@ class AggregateModel
     {
         /* @var \Samknows\Repository\DataPoint $dataPointRepository */
         $dataPointRepository = $this->getDataPointRepository();
-        $dataPointRepository->aggregate();
+        return $dataPointRepository->aggregate();
     }
     
 }
