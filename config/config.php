@@ -63,4 +63,6 @@ $config[AggregateCommand::class] = autowire();
 $config[LoadDataCommand::class] = autowire();
 $config[SearchCommand::class] = autowire();
 
+chdir($config['document.root']);
+
 return $config;

@@ -20,19 +20,12 @@ $builder->useAutowiring(true);
 $builder->useAnnotations(false);
 $builder->ignorePhpDocErrors(true);
 $cache = new ArrayCache();
-//$builder->setDefinitionCache($cache);
-var_dump($proxiesFile);
 $builder->writeProxiesToFile(true, $proxiesFile);
 $builder->addDefinitions(__DIR__ . '/config/config.php');
 $container = $builder->build();
 
-//$container = new ContainerBuilder();
-//$loader = new YamlFileLoader($container, new FileLocator(__DIR__ ));
-//$loader->load('config/services.yml');
 $application = new Application(\Samknows\APPLICATION_NAME,
         \Samknows\APPLICATION_VERSION);
-var_dump($container->get(LoadDataCommand::class));
-//die;
 $application->add($container->get(LoadDataCommand::class));
 $application->add($container->get(AggregateCommand::class));
 $application->add($container->get(SearchCommand::class));

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="Samknows\Entity\AggregatedDataPoints" table="aggregated_data_points">
-    <indexes>
-      <index name="fk_aggregated_data_points_1_idx" columns="unit_id"/>
-    </indexes>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="unitId" type="integer" column="unit_id" nullable="false">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
     <field name="hour" type="integer" column="hour" nullable="false">
       <options>
         <option name="unsigned"/>
@@ -84,27 +86,23 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMin" type="integer" column="packet_loss_min" nullable="false">
+    <field name="packetLossMin" type="float" column="packet_loss_min" precision="10" scale="0" nullable="false">
       <options>
-        <option name="unsigned"/>
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMedian" type="integer" column="packet_loss_median" nullable="false">
+    <field name="packetLossMedian" type="float" column="packet_loss_median" precision="10" scale="0" nullable="false">
       <options>
-        <option name="unsigned"/>
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMax" type="integer" column="packet_loss_max" nullable="false">
+    <field name="packetLossMax" type="float" column="packet_loss_max" precision="10" scale="0" nullable="false">
       <options>
-        <option name="unsigned"/>
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMean" type="integer" column="packet_loss_mean" nullable="false">
+    <field name="packetLossMean" type="float" column="packet_loss_mean" precision="10" scale="0" nullable="false">
       <options>
-        <option name="unsigned"/>
         <option name="default">0</option>
       </options>
     </field>
@@ -114,10 +112,5 @@
         <option name="default">0</option>
       </options>
     </field>
-    <many-to-one field="unit" target-entity="Samknows\Entity\DataPoint" fetch="LAZY">
-      <join-columns>
-        <join-column name="unit_id" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
   </entity>
 </doctrine-mapping>

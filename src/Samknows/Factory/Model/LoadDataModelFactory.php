@@ -15,9 +15,6 @@ class LoadDataModelFactory
 {
     public function create(EntityManager $em, $documentRoot)
     {
-//        var_dump(get_class($em->getRepository(DataPoint::class)));
-//        var_dump($em->getRepository(DataPoint::class));
-//        die;
         return new LoadDataModel($em, $documentRoot);
     }
 }

@@ -8,6 +8,9 @@
       <index name="data_point_packet_loss_idx" columns="packet_loss"/>
       <index name="data_point_unit_id_idx" columns="unit_id"/>
     </indexes>
+    <unique-constraints>
+      <unique-constraint name="index7" columns="unit_id,timestamp,packet_loss,latency,upload,download"/>
+    </unique-constraints>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
@@ -31,11 +34,7 @@
         <option name="unsigned"/>
       </options>
     </field>
-    <field name="packetLoss" type="integer" column="packet_loss" nullable="true">
-      <options>
-        <option name="unsigned"/>
-      </options>
-    </field>
+    <field name="packetLoss" type="float" column="packet_loss" precision="10" scale="0" nullable="true"/>
     <field name="timestamp" type="date" column="timestamp" nullable="false"/>
   </entity>
 </doctrine-mapping>

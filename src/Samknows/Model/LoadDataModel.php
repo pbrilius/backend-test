@@ -56,22 +56,22 @@ class LoadDataModel
             foreach (\Samknows\METRICS as $metricsUnit) {
                 foreach ($unit->metrics->{$metricsUnit} as $dataEntry) {
                     $dataPoint = new DataPointEntity();
-                    var_dump('set' . mb_convert_case($metricsUnit, MB_CASE_TITLE));
-                    call_user_func([$dataPoint, 'set' . mb_convert_case($metricsUnit, MB_CASE_TITLE)],
+                    var_dump('set' . str_replace('_', '', mb_convert_case($metricsUnit, MB_CASE_TITLE)));
+                    call_user_func([$dataPoint, 'set' . str_replace('_', '', mb_convert_case($metricsUnit, MB_CASE_TITLE))],
                         $dataEntry->value);
                     $dataPoint->setUnitId($unit->unit_id);
                     $dataPoint->setTimestamp(new \DateTime($dataEntry->timestamp));
                     var_dump('$dataPoint dump');
-                    var_dump($dataPoint->getUnitId());
-                    var_dump($dataPoint->getTimestamp());
+                    var_dump((array) $dataPoint);
                     try {
                         $entityManager->persist($dataPoint);
                         $entityManager->flush();
                     } catch (\Exception $e) {
-                        var_dump($e->getMessage());
+                        echo $e->getMessage();
+                        continue;
                     }
                     
-                    die;
+//                    die;
                     continue;
                     $dataPoint->setDownload($dataEntry->download);
                     $dataPoint->setUpload($dataEntry->upload);
@@ -81,12 +81,6 @@ class LoadDataModel
                     $dataPoint->setTimestamp((new \DateTime())->format('Y-m-d H:i:s'));
                 }
             }
-        }
-        return;
-        while (($dataEntry = fgetcsv($handle)) !== null) {
-            var_dump($dataEntry);
-            continue;
-            
         }
     }
     

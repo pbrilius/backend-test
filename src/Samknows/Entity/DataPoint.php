@@ -4,8 +4,6 @@ namespace Samknows\Entity;
 
 /**
  * DataPoint
- * 
- * @ORM\Entity(repositoryClass="Samknows\Repository\DataPoint")
  */
 class DataPoint
 {
@@ -30,7 +28,7 @@ class DataPoint
     private $latency;
 
     /**
-     * @var integer
+     * @var float
      */
     private $packetLoss;
 
@@ -144,7 +142,7 @@ class DataPoint
     /**
      * Set packetLoss
      *
-     * @param integer $packetLoss
+     * @param float $packetLoss
      *
      * @return DataPoint
      */
@@ -158,7 +156,7 @@ class DataPoint
     /**
      * Get packetLoss
      *
-     * @return integer
+     * @return float
      */
     public function getPacketLoss()
     {

@@ -4,11 +4,14 @@ namespace Samknows\Entity;
 
 /**
  * AggregatedDataPoints
- * 
- * @ORM\Entity(repositoryClass="Samknows\Repository\AggregatedDataPoints")
  */
 class AggregatedDataPoints
 {
+    /**
+     * @var integer
+     */
+    private $unitId;
+
     /**
      * @var integer
      */
@@ -75,22 +78,22 @@ class AggregatedDataPoints
     private $latencyMean = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $packetLossMin = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $packetLossMedian = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $packetLossMax = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $packetLossMean = '0';
 
@@ -104,11 +107,30 @@ class AggregatedDataPoints
      */
     private $id;
 
-    /**
-     * @var \Samknows\Entity\DataPoint
-     */
-    private $unit;
 
+    /**
+     * Set unitId
+     *
+     * @param integer $unitId
+     *
+     * @return AggregatedDataPoints
+     */
+    public function setUnitId($unitId)
+    {
+        $this->unitId = $unitId;
+
+        return $this;
+    }
+
+    /**
+     * Get unitId
+     *
+     * @return integer
+     */
+    public function getUnitId()
+    {
+        return $this->unitId;
+    }
 
     /**
      * Set hour
@@ -425,7 +447,7 @@ class AggregatedDataPoints
     /**
      * Set packetLossMin
      *
-     * @param integer $packetLossMin
+     * @param float $packetLossMin
      *
      * @return AggregatedDataPoints
      */
@@ -439,7 +461,7 @@ class AggregatedDataPoints
     /**
      * Get packetLossMin
      *
-     * @return integer
+     * @return float
      */
     public function getPacketLossMin()
     {
@@ -449,7 +471,7 @@ class AggregatedDataPoints
     /**
      * Set packetLossMedian
      *
-     * @param integer $packetLossMedian
+     * @param float $packetLossMedian
      *
      * @return AggregatedDataPoints
      */
@@ -463,7 +485,7 @@ class AggregatedDataPoints
     /**
      * Get packetLossMedian
      *
-     * @return integer
+     * @return float
      */
     public function getPacketLossMedian()
     {
@@ -473,7 +495,7 @@ class AggregatedDataPoints
     /**
      * Set packetLossMax
      *
-     * @param integer $packetLossMax
+     * @param float $packetLossMax
      *
      * @return AggregatedDataPoints
      */
@@ -487,7 +509,7 @@ class AggregatedDataPoints
     /**
      * Get packetLossMax
      *
-     * @return integer
+     * @return float
      */
     public function getPacketLossMax()
     {
@@ -497,7 +519,7 @@ class AggregatedDataPoints
     /**
      * Set packetLossMean
      *
-     * @param integer $packetLossMean
+     * @param float $packetLossMean
      *
      * @return AggregatedDataPoints
      */
@@ -511,7 +533,7 @@ class AggregatedDataPoints
     /**
      * Get packetLossMean
      *
-     * @return integer
+     * @return float
      */
     public function getPacketLossMean()
     {
@@ -550,30 +572,6 @@ class AggregatedDataPoints
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set unit
-     *
-     * @param \Samknows\Entity\DataPoint $unit
-     *
-     * @return AggregatedDataPoints
-     */
-    public function setUnit(\Samknows\Entity\DataPoint $unit = null)
-    {
-        $this->unit = $unit;
-
-        return $this;
-    }
-
-    /**
-     * Get unit
-     *
-     * @return \Samknows\Entity\DataPoint
-     */
-    public function getUnit()
-    {
-        return $this->unit;
     }
 }
 
