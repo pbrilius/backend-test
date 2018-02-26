@@ -20,8 +20,8 @@ use function DI\autowire;
 
 chdir(__DIR__);
 
-$config['applicationMode']            = $applicationMode;
-$config['document.root']              = env('DOCUMENT_ROOT', getcwd() . '/..');
+$config['applicationMode']            = env('APPLICATION_MODE', 'development');
+$config['document.root']              = getcwd() . '/..';
 $config['dbParams']                   = [
     'driver'        => 'pdo_mysql',
     'user'          => 'backend_test',
@@ -40,13 +40,22 @@ $config['path.mappings']              = [string('{document.root}/mappings')];
 $config['path.proxy']                 = [string('{path.tmp}/proxies')];
 $config['path.cache']                 = string('{path.tmp}/cache');
 $config['path.metadata']              = string('{path.tmp}/metadata');
+$config['proxyNamespace']             = 'Pixelpitch\Easynote\Proxies';
+$config['entityNamespaces']           = ['Samknows\Entity'];
+$config['regionsParams']              = [
+    'defaultLifetime' => 4096
+];
 $config[EntityManager::class]         = factory([new EntityManagerFactory, 'create'])
         ->parameter('dbParams', get('dbParams'))
-        ->parameter('mode', get('path.proxy'))
-        ->parameter('applicationMode', get('applicationMode'));
+        ->parameter('paths', get('path.mappings'))
+        ->parameter('mode', get('applicationMode'))
+        ->parameter('proxyDir', get('path.proxy'))
+        ->parameter('proxyNamespace', get('proxyNamespace'))
+        ->parameter('entityNamespaces', get('entityNamespaces'));
 $config['doctrine.entity_manager'] = get(EntityManager::class);
 $config[AggregateModel::class] = factory([new AggregateModelFactory(), 'create']);
-$config[LoadDataModel::class] = factory([new LoadDataModelFactory(), 'create']);
+$config[LoadDataModel::class] = factory([new LoadDataModelFactory(), 'create'])
+        ->parameter('documentRoot', get('document.root'));
 $config[SearchModel::class] = factory([new SearchModelFactory(), 'create']);
 $config[FixtureCommand::class] = autowire()
         ->constructorParameter('config', get('path.fixtures'));

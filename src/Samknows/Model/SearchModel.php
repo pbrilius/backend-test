@@ -2,7 +2,7 @@
 
 namespace Samknows\Model;
 
-use Samknows\Repository\AggregatedDataPoints;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * Description of SearchModel
@@ -13,16 +13,16 @@ class SearchModel
 {
     /**
      *
-     * @var AggregatedDataPoints
+     * @var EntityRepository
      */
     private $aggregatedDataPointsRepository;
     
-    public function __construct(AggregatedDataPoints $aggregatedDataPointsRepository)
+    public function __construct(EntityRepository $aggregatedDataPointsRepository)
     {
         $this->aggregatedDataPointsRepository = $aggregatedDataPointsRepository;
     }
     
-    public function getAggregatedDataPointsRepository(): AggregatedDataPoints
+    public function getAggregatedDataPointsRepository(): EntityRepository
     {
         return $this->aggregatedDataPointsRepository;
     }

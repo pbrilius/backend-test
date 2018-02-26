@@ -17,11 +17,11 @@ class DataPoint extends EntityRepository
      */
     protected $qb;
     
-    public function __construct()
+    public function init()
     {
         $this->qb = $this->createQueryBuilder('dp')
-                ->select('dp.*')
-                ->from(self::class, 'dp');
+            ->select('dp.*')
+            ->from(self::class, 'dp');
     }
     
     public function getQb()

@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Samknows\Model\AggregateModel;
 
 /**
  * Description of AggregateCommand
@@ -20,17 +21,18 @@ class AggregateCommand extends Command
     protected static $defaultName = 'app:aggregate';
     private $aggregateModel;
     
-    public function __construct($aggregateModel)
+    public function __construct(AggregateModel $aggregateModel)
     {
+        parent::__construct();
         $this->aggregateModel = $aggregateModel;
     }
 
-    public function getAggregateModel()
+    public function getAggregateModel() : AggregateModel
     {
         return $this->aggregateModel;
     }
 
-    public function setAggregateModel($aggregateModel)
+    public function setAggregateModel(AggregateModel $aggregateModel)
     {
         $this->aggregateModel = $aggregateModel;
         return $this;

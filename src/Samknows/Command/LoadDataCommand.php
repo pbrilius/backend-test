@@ -27,15 +27,16 @@ class LoadDataCommand extends Command
     
     public function __construct(LoadDataModel $loadDataModel)
     {
+        parent::__construct();
         $this->loadDataModel = $loadDataModel;
     }
 
-    public function getLoaddataModel()
+    public function getLoaddataModel(): LoadDataModel
     {
         return $this->loadDataModel;
     }
 
-    public function setLoaddataModel($loadDataModel)
+    public function setLoaddataModel(LoadDataModel $loadDataModel)
     {
         $this->loadDataModel = $loadDataModel;
         return $this;
@@ -44,17 +45,24 @@ class LoadDataCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('app:loaddata')
-            ->setDefinition(
-                new InputDefinition([
-                        new InputOption('data-file', 'f', InputOption::VALUE_REQUIRED),
-                    ])
-                )
+            ->setName('app:load-data')
+            ->addArgument('data-file', InputArgument::REQUIRED,
+                    'File to laod data from')
             ->setDescription('Loading data into database from CSV file');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->loadDataModel->loadData();
+        $args = $input->getArguments();
+        var_dump($args);
+        $fileName = $input->getArgument('data-file');
+        var_dump('getcwd test a1');
+        var_dump(getcwd());
+        var_dump($fileName);
+        try {
+            $this->loadDataModel->loadData($fileName);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

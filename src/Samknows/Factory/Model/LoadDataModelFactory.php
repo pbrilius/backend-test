@@ -4,6 +4,7 @@ namespace Samknows\Factory\Model;
 
 use Samknows\Model\LoadDataModel;
 use Doctrine\ORM\EntityManager;
+use Samknows\Entity\DataPoint;
 
 /**
  * Description of LoadDataModelFactory
@@ -12,8 +13,12 @@ use Doctrine\ORM\EntityManager;
  */
 class LoadDataModelFactory
 {
-    public function createLoadDataModel(EntityManager $em)
+    public function create(EntityManager $em, $documentRoot)
     {
-        return new LoadDataModel($em);
+        var_dump(get_class($em->getRepository(DataPoint::class)));
+//        var_dump($em->getRepository(DataPoint::class));
+//        die;
+        return new LoadDataModel($em->getRepository(DataPoint::class),
+                $documentRoot);
     }
 }

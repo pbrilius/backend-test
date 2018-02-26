@@ -2,14 +2,14 @@
 
 namespace Samknows\Repository;
 
-use Samknows\Repository\QueryBuilder\DataPoint;
+use Samknows\Repository\QueryBuilder\DataPoint as DataPointRepository;
 
 /**
  * Description of DataPoint
  *
  * @author paul
  */
-class DataPoint extends DataPoint
+class DataPoint extends DataPointRepository
 {
 
 }

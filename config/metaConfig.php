@@ -1,6 +1,7 @@
 <?php
 
-$applicationMode = isset($_SERVER['applicationMode']) ? $_SERVER['applicationMode'] : 'development';
+$applicationMode = isset($_SERVER['APPLICATION_MODE']) ?
+        $_SERVER['APPLICATION_MODE'] : 'development';
 if ($applicationMode == 'development') {
     ini_set('display_errors', '1');
     error_reporting('E_ALL');
@@ -15,3 +16,5 @@ if ($applicationMode == 'development') {
     ini_set('display_errors', '0');
     error_reporting('E_NONE');
 }
+
+$proxiesFile = 'tmp/proxies';

@@ -21,6 +21,7 @@ $builder->useAnnotations(false);
 $builder->ignorePhpDocErrors(true);
 $cache = new ArrayCache();
 //$builder->setDefinitionCache($cache);
+var_dump($proxiesFile);
 $builder->writeProxiesToFile(true, $proxiesFile);
 $builder->addDefinitions(__DIR__ . '/config/config.php');
 $container = $builder->build();
@@ -31,7 +32,7 @@ $container = $builder->build();
 $application = new Application(\Samknows\APPLICATION_NAME,
         \Samknows\APPLICATION_VERSION);
 var_dump($container->get(LoadDataCommand::class));
-die;
+//die;
 $application->add($container->get(LoadDataCommand::class));
 $application->add($container->get(AggregateCommand::class));
 $application->add($container->get(SearchCommand::class));

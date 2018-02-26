@@ -4,6 +4,7 @@ namespace Samknows\Factory\Model;
 
 use Samknows\Model\AggregateModel;
 use Doctrine\ORM\EntityManager;
+use Samknows\Entity\AggregatedDataPoints;
 
 /**
  * Description of AggregateModelFactory
@@ -12,8 +13,8 @@ use Doctrine\ORM\EntityManager;
  */
 class AggregateModelFactory
 {
-    public function createAgggregateModel(EntityManager $em)
+    public function create(EntityManager $em)
     {
-        return new AggregateModel($em);
+        return new AggregateModel($em->getRepository(AggregatedDataPoints::class));
     }
 }

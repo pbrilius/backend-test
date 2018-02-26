@@ -4,6 +4,7 @@ namespace Samknows\Factory\Model;
 
 use Samknows\Model\SearchModel;
 use Doctrine\ORM\EntityManager;
+use Samknows\Entity\DataPoint;
 
 /**
  * Description of SearchModelFactory
@@ -12,8 +13,8 @@ use Doctrine\ORM\EntityManager;
  */
 class SearchModelFactory
 {
-    public function createSearchModel(EntityManager $em)
+    public function create(EntityManager $em)
     {
-        return new SearchModel($em);
+        return new SearchModel($em->getRepository(DataPoint::class));
     }
 }

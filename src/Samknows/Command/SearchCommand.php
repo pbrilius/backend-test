@@ -2,7 +2,7 @@
 
 namespace Samknows\Command;
 
-use Samknows\Model\LoadDataModel;
+use Samknows\Model\SearchModel;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;
@@ -18,6 +18,18 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SearchCommand extends Command
 {
     protected static $defaultName = 'app:search';
+    
+    /**
+     *
+     * @var type SearchModel
+     */
+    private $searchModel;
+    
+    public function __construct(SearchModel $searchModel)
+    {
+        parent::__construct();
+        $this->searchModel = $searchModel;
+    }
     
     protected function configure()
     {
@@ -46,4 +58,15 @@ class SearchCommand extends Command
         $response = $this->searchModel->search($conditions);
         $output->writeln($response);
     }
+    
+    public function setSearchModel(SearchModel $searchModel)
+    {
+        $this->searchModel = $searchModel;
+    }
+    
+    public function getSearchModel(): SearchModel
+    {
+        return $this->searchModel;
+    }
+    
 }

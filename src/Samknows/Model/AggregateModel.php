@@ -2,7 +2,7 @@
 
 namespace Samknows\Model;
 
-use Samknows\Repository\AggregatedDataPoints;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * Description of AggregateModel
@@ -13,21 +13,21 @@ class AggregateModel
 {
     /**
      *
-     * @var type AggregatedDataPoints
+     * @var type EntityRepository
      */
     private $aggregatedRepository;
 
-    public function __construct(AggregatedDataPoints $aggregatedRepository)
+    public function __construct(EntityRepository $aggregatedRepository)
     {
         $this->aggregatedRepository = $aggregatedRepository;
     }
     
-    public function getAggregatedRepository(): AggregatedDataPoints
+    public function getAggregatedRepository(): EntityRepository
     {
         return $this->aggregatedRepository;
     }
 
-    public function setAggregatedRepository(type $aggregatedRepository)
+    public function setAggregatedRepository(EntityRepository $aggregatedRepository)
     {
         $this->aggregatedRepository = $aggregatedRepository;
         return $this;
