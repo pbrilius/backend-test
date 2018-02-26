@@ -11,5 +11,8 @@ use Samknows\Repository\QueryBuilder\DataPoint as DataPointRepository;
  */
 class DataPoint extends DataPointRepository
 {
-
+    public function aggregate()
+    {
+        
+    }
 }

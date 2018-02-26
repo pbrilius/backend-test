@@ -3,7 +3,10 @@
 namespace Samknows\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\QueryBuilder;
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Samknows\Entity\AggregatedDataPoints as AggregatedDataPointsEntity;
 
 /**
  * Description of AggregatedDataPoints
@@ -18,10 +21,12 @@ class AggregatedDataPoints extends EntityRepository
      */
     private $qb;
     
-    public function __construct()
+    public function __construct(EntityManager $em)
     {
+        $metadata = new ClassMetadata(AggregatedDataPointsEntity::class);
+        parent::__construct($em, $metadata);
         $this->qb = $this->createQueryBuilder('adp')
-                ->from(self::class, 'adp');
+                ->from(AggregatedDataPointsEntity::class, 'adp');
     }
     
     public function getQb()

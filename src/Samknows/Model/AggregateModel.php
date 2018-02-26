@@ -15,28 +15,28 @@ class AggregateModel
      *
      * @var type EntityRepository
      */
-    private $aggregatedRepository;
+    private $dataPointRepository;
 
-    public function __construct(EntityRepository $aggregatedRepository)
+    public function __construct(EntityRepository $dataPointRepository)
     {
-        $this->aggregatedRepository = $aggregatedRepository;
+        $this->dataPointRepository = $dataPointRepository;
     }
     
-    public function getAggregatedRepository(): EntityRepository
+    public function getDataPointRepository(): EntityRepository
     {
-        return $this->aggregatedRepository;
+        return $this->dataPointRepository;
     }
 
-    public function setAggregatedRepository(EntityRepository $aggregatedRepository)
+    public function setDataPointRepository(EntityRepository $dataPointRepository)
     {
-        $this->aggregatedRepository = $aggregatedRepository;
+        $this->dataPointRepository = $dataPointRepository;
         return $this;
     }
 
     public function aggregateDataPoints()
     {
-        $aggregateRepository = $this->getAggregatedRepository();
-        $aggregateRepository->aggregate();
+        $dataPointRepository = $this->getDataPointRepository();
+        $dataPointRepository->aggregate();
     }
     
 }
