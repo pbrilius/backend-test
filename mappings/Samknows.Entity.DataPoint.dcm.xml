@@ -36,6 +36,6 @@
       </options>
     </field>
     <field name="packetLoss" type="float" column="packet_loss" precision="10" scale="0" nullable="true"/>
-    <field name="timestamp" type="date" column="timestamp" nullable="false"/>
+    <field name="timestamp" type="datetime" column="timestamp" nullable="false"/>
   </entity>
 </doctrine-mapping>

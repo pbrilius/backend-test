@@ -33,7 +33,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="downloadMean" type="integer" column="download_mean" nullable="false">
+    <field name="downloadAvg" type="integer" column="download_avg" nullable="false">
       <options>
         <option name="unsigned"/>
         <option name="default">0</option>
@@ -57,7 +57,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="uploadMean" type="integer" column="upload_mean" nullable="false">
+    <field name="uploadAvg" type="integer" column="upload_avg" nullable="false">
       <options>
         <option name="unsigned"/>
         <option name="default">0</option>
@@ -81,7 +81,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="latencyMean" type="integer" column="latency_mean" nullable="false">
+    <field name="latencyAvg" type="integer" column="latency_avg" nullable="false">
       <options>
         <option name="unsigned"/>
         <option name="default">0</option>
@@ -102,7 +102,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMean" type="float" column="packet_loss_mean" precision="10" scale="0" nullable="false">
+    <field name="packetLossAvg" type="float" column="packet_loss_avg" precision="10" scale="0" nullable="false">
       <options>
         <option name="default">0</option>
       </options>

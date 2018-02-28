@@ -60,14 +60,19 @@ class LoadDataModel
                     call_user_func([$dataPoint, 'set' . str_replace('_', '', mb_convert_case($metricsUnit, MB_CASE_TITLE))],
                         $dataEntry->value);
                     $dataPoint->setUnitId($unit->unit_id);
+                    var_dump('ts load test');
+                    var_dump($dataEntry->timestamp);
+                    var_dump((new \DateTime($dataEntry->timestamp))->format('Y-m-d H;i:s'));
+//                    continue;
                     $dataPoint->setTimestamp(new \DateTime($dataEntry->timestamp));
                     var_dump('$dataPoint dump');
                     var_dump((array) $dataPoint);
+                    var_dump($dataPoint->getTimestamp()->format('Y-m-d H:i:s'));
                     try {
                         $entityManager->persist($dataPoint);
                         $entityManager->flush();
                     } catch (\Exception $e) {
-                        echo $e->getMessage();
+                        echo $e->getMessage() . "\n";
                         continue;
                     }
                     

@@ -35,7 +35,7 @@ class AggregatedDataPoints
     /**
      * @var integer
      */
-    private $downloadMean = '0';
+    private $downloadAvg = '0';
 
     /**
      * @var integer
@@ -55,7 +55,7 @@ class AggregatedDataPoints
     /**
      * @var integer
      */
-    private $uploadMean = '0';
+    private $uploadAvg = '0';
 
     /**
      * @var integer
@@ -75,7 +75,7 @@ class AggregatedDataPoints
     /**
      * @var integer
      */
-    private $latencyMean = '0';
+    private $latencyAvg = '0';
 
     /**
      * @var float
@@ -95,7 +95,7 @@ class AggregatedDataPoints
     /**
      * @var float
      */
-    private $packetLossMean = '0';
+    private $packetLossAvg = '0';
 
     /**
      * @var integer
@@ -229,27 +229,27 @@ class AggregatedDataPoints
     }
 
     /**
-     * Set downloadMean
+     * Set downloadAvg
      *
-     * @param integer $downloadMean
+     * @param integer $downloadAvg
      *
      * @return AggregatedDataPoints
      */
-    public function setDownloadMean($downloadMean)
+    public function setDownloadAvg($downloadAvg)
     {
-        $this->downloadMean = $downloadMean;
+        $this->downloadAvg = $downloadAvg;
 
         return $this;
     }
 
     /**
-     * Get downloadMean
+     * Get downloadAvg
      *
      * @return integer
      */
-    public function getDownloadMean()
+    public function getDownloadAvg()
     {
-        return $this->downloadMean;
+        return $this->downloadAvg;
     }
 
     /**
@@ -325,27 +325,27 @@ class AggregatedDataPoints
     }
 
     /**
-     * Set uploadMean
+     * Set uploadAvg
      *
-     * @param integer $uploadMean
+     * @param integer $uploadAvg
      *
      * @return AggregatedDataPoints
      */
-    public function setUploadMean($uploadMean)
+    public function setUploadAvg($uploadAvg)
     {
-        $this->uploadMean = $uploadMean;
+        $this->uploadAvg = $uploadAvg;
 
         return $this;
     }
 
     /**
-     * Get uploadMean
+     * Get uploadAvg
      *
      * @return integer
      */
-    public function getUploadMean()
+    public function getUploadAvg()
     {
-        return $this->uploadMean;
+        return $this->uploadAvg;
     }
 
     /**
@@ -421,27 +421,27 @@ class AggregatedDataPoints
     }
 
     /**
-     * Set latencyMean
+     * Set latencyAvg
      *
-     * @param integer $latencyMean
+     * @param integer $latencyAvg
      *
      * @return AggregatedDataPoints
      */
-    public function setLatencyMean($latencyMean)
+    public function setLatencyAvg($latencyAvg)
     {
-        $this->latencyMean = $latencyMean;
+        $this->latencyAvg = $latencyAvg;
 
         return $this;
     }
 
     /**
-     * Get latencyMean
+     * Get latencyAvg
      *
      * @return integer
      */
-    public function getLatencyMean()
+    public function getLatencyAvg()
     {
-        return $this->latencyMean;
+        return $this->latencyAvg;
     }
 
     /**
@@ -517,27 +517,27 @@ class AggregatedDataPoints
     }
 
     /**
-     * Set packetLossMean
+     * Set packetLossAvg
      *
-     * @param float $packetLossMean
+     * @param float $packetLossAvg
      *
      * @return AggregatedDataPoints
      */
-    public function setPacketLossMean($packetLossMean)
+    public function setPacketLossAvg($packetLossAvg)
     {
-        $this->packetLossMean = $packetLossMean;
+        $this->packetLossAvg = $packetLossAvg;
 
         return $this;
     }
 
     /**
-     * Get packetLossMean
+     * Get packetLossAvg
      *
      * @return float
      */
-    public function getPacketLossMean()
+    public function getPacketLossAvg()
     {
-        return $this->packetLossMean;
+        return $this->packetLossAvg;
     }
 
     /**
