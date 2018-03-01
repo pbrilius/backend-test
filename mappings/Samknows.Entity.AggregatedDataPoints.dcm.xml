@@ -87,22 +87,22 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMin" type="float" column="packet_loss_min" precision="10" scale="0" nullable="false">
+    <field name="packetLossMin" type="float" column="packet_loss_min" precision="2" scale="6" nullable="false">
       <options>
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMedian" type="float" column="packet_loss_median" precision="10" scale="0" nullable="false">
+    <field name="packetLossMedian" type="float" column="packet_loss_median" precision="2" scale="6" nullable="false">
       <options>
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossMax" type="float" column="packet_loss_max" precision="10" scale="0" nullable="false">
+    <field name="packetLossMax" type="float" column="packet_loss_max" precision="2" scale="6" nullable="false">
       <options>
         <option name="default">0</option>
       </options>
     </field>
-    <field name="packetLossAvg" type="float" column="packet_loss_avg" precision="10" scale="0" nullable="false">
+    <field name="packetLossAvg" type="float" column="packet_loss_avg" precision="2" scale="6" nullable="false">
       <options>
         <option name="default">0</option>
       </options>
