@@ -20,3 +20,10 @@ the database, or at least to a single column of several database tables)
 * The entities extension, so that additional entities like Unit, meybe some
 aggregation measurements entities are added to the database and XML
 mappings, more following the ORM methodology and approach.
+
+# Note
+
+> The following parts are more of an interest in the applicatino:
+* Fixed scale and precision FLOAT MySQL data type, which for median indicators
+and aggregation allows and empowers more thorough and faster storing,
+reading and displaying to the UI,

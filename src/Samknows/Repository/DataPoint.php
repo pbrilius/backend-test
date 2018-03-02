@@ -51,35 +51,23 @@ class DataPoint extends DataPointRepository
                 );
             }
         }
-        var_dump($qb->getDQL());
-//        echo 'test cp 6';
-//        $qb->groupBy('dp.unitId,'
-//            . ' formatted_date'
-//        );
-//        echo 'test cp 8';
-//        $qb->orderBy('dp.unitId,'
-//            . ' formatted_date'
-//        );
-//        echo 'test cp 7';
-//        var_dump($qb->getDQL());
+        $qb->addSelect('COUNT(dp.id) AS sample_size');
         $aggregatedFields = $qb
             ->getQuery()
             ->getArrayResult();
-//        var_dump($aggregatedFields);
-//        $qb->resetDQLParts();
-//        $qb = $this->initAggregateQueryBuilder();
+        $em = $this->getEntityManager();
         foreach ($aggregatedFields as $row) {
-            var_dump($row);
             $aggregatedDataPoints = new AggregatedDataPoints();
             foreach ($row as $fieldName => $field) {
-                var_dump($fieldName);
-                var_dump($field);
                 switch ($fieldName) {
                     case 'formatted_date':
-                        continue;
+                        $aggregatedDataPoints->setHour($field);
                         break;
                     case 'unitId':
                         $aggregatedDataPoints->setUnitId($field);
+                        break;
+                    case 'sample_size':
+                        $aggregatedDataPoints->setSampleSize($field);
                         break;
                     default:
                         $fieldParts = explode('_', $fieldName);
@@ -93,13 +81,19 @@ class DataPoint extends DataPointRepository
                             'set'
                             . $metric
                             . $indicator
-                        ], $field);
+                        ], is_null($field) ? 0 : $field);
                         break;
                 }
-                var_dump((array) $aggregatedDataPoints);
+            }
+            try {
+                $em->persist($aggregatedDataPoints);
+                $em->flush();
+            } catch (\Exception $e) {
+                echo $e->getMessage() . "\n";
+                continue;
             }
         }
-        return;
+//        return;
         $doctrineUnsupportedIndicators = array_diff(\Samknows\INDICATORS,
             \Samknows\DOCTRINE_SUPPORTED_INDICATORS);
         $unsupportedIndicatorsAggregation = [];
@@ -112,8 +106,6 @@ class DataPoint extends DataPointRepository
                     $formattedMetric .= mb_convert_case($metricParts[$i], MB_CASE_TITLE);
                 }
                 $formattedMetric = $metricParts[0] . $formattedMetric;
-                var_dump($metric);
-                var_dump($formattedMetric);
                 $qb->addSelect('dp.'
                     . $formattedMetric
                     . ' AS '
@@ -136,38 +128,107 @@ class DataPoint extends DataPointRepository
                 $result = $qb
                     ->getQuery()
                     ->getArrayResult();
-                var_dump($result);
-//                var_dump($unsupportedIndicator);
-//                exit;
                 $unsupportedIndicatorsAggregation[strtolower($unsupportedIndicator)][$metric] = $result;
             }
         }
-
-        foreach ($unsupportedIndicatorsAggregation as $metric) {
-
-        }
-//        var_dump($unsupportedIndicatorsAggregation);
-//        return;
         $groupedUnsupportedIndicators = [];
         foreach ($unsupportedIndicatorsAggregation as $indicator => $metrics) {
-//            var_dump($indicator);
-//            var_dump(array_keys($metrics));
-//            exit;
             foreach ($metrics as $metric => $data) {
-//                var_dump('metric');
-//                var_dump($metric);
                 foreach ($data as $row) {
-//                    var_dump('keys');
-//                    var_dump(array_keys($row));
-//                    var_dump($row[array_keys($row)[2]]);
-//                                        continue;
                     $groupedUnsupportedIndicators[$indicator][$metric][$row['unitId']]
                     [$row['formatted_date']][] = $row[array_keys($row)[2]];
                 }
             }
         }
+        var_dump('$groupedUnsupportedIndicators');
+//        var_dump(array_keys($groupedUnsupportedIndicators));
+//        return;
+        $aggregatedUnsuppotedIndicators = [];
+        foreach ($groupedUnsupportedIndicators as $unsupportedIndicator => $metrics) {
+            var_dump('$unsupportedIndicator');
+            var_dump($unsupportedIndicator);
+//            continue;
+            foreach ($metrics as $metric => $metricData) {
+                var_dump('$metric');
+                var_dump($metric);
+                var_dump('$metricData');
+                var_dump($metricData);
+//                continue;
+                foreach ($metricData as $unit => $unitData) {
+                    var_dump('$unit');
+                    var_dump($unit);
+//                    continue;
+                    foreach ($unitData as $formattedDate => $hourData) {
+                        var_dump('formattedDate');
+                        var_dump($formattedDate);
+                        var_dump('$hourData');
+                        var_dump($hourData);
+//                        continue;
+                        $size = count($hourData);
+                        var_dump('$metric test');
+                        var_dump($aggregatedUnsuppotedIndicators[$unsupportedIndicator]);
+                        var_dump('test data indexes');
+                        var_dump(array_keys($aggregatedUnsuppotedIndicators));
+                        var_dump($aggregatedUnsuppotedIndicators[$unsupportedIndicator]);
+                        var_dump($aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric]);
+                        var_dump($aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit]);
+                        var_dump($aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate]);
+//                        continue;
+                        var_dump('offset types test');
+                        var_dump($unsupportedIndicator);
+                        var_dump($metric);
+                        var_dump($unit);
+                        var_dump($formattedDate);
+                        if ($size % 2 == 0) {
+                            $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate] = 'test a1';
+                            $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate]
+                                = round(($hourData[(floor($size / 2))] + $hourData[ceil($size / 2)]) / 2, 2);
+                        } else {
+                            $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate] = 'test a2';
+                                = $hourData[$size / 2];
+                        }
+                        $aggregatedDataPoints = $em
+                            ->getRepository(AggregatedDataPoints::class)
+                            ->findOneBy([
+                                'unitId' => $unit,
+                                'hour' => $formattedDate
+                            ]);
+                        $em
+                            ->persist($aggregatedDataPoints)
+                            ->flush();
+                    }
+                }
+            }
+        }
 
-        var_dump($groupedUnsupportedIndicators);
+        foreach ($aggregatedUnsuppotedIndicators as $indicator) {
+            foreach ($indicator as $metric) {
+//                $formattedMetric = '';
+//                $metricParts = explode('_', $metric);
+//                for ($i = 1; $i < count($metricParts); $i++) {
+//                    $formattedMetric .= mb_convert_case($metricParts[$i], MB_CASE_TITLE);
+//                }
+//                $formattedMetric = $metricParts[0] . $formattedMetric;
+//                var_dump($metric);
+//                var_dump($formattedMetric);
+                foreach ($metric as $unit) {
+                    foreach ($unit as $formattedDate => $parameter) {
+                        $aggregatedDataPoints = $this->findOneBy([
+                            'unitId' => $unit
+                        ]);
+                        call_user_func([
+                            $aggregatedDataPoints,
+                            'set'
+                            . $metric
+                            . $indicator
+                        ], is_null($parameter) ? 0 : $parameter);
+                        var_dump((array) $aggregatedDataPoints);
+                    }
+                }
+            }
+        }
+
+//        var_dump($groupedUnsupportedIndicators);
 //        die;
     }
 }

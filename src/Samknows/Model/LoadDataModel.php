@@ -62,7 +62,7 @@ class LoadDataModel
                     $dataPoint->setUnitId($unit->unit_id);
                     var_dump('ts load test');
                     var_dump($dataEntry->timestamp);
-                    var_dump((new \DateTime($dataEntry->timestamp))->format('Y-m-d H;i:s'));
+                    var_dump((new \DateTime($dataEntry->timestamp))->format('Y-m-d H:i:s'));
 //                    continue;
                     $dataPoint->setTimestamp(new \DateTime($dataEntry->timestamp));
                     var_dump('$dataPoint dump');

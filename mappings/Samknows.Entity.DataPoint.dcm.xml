@@ -35,7 +35,7 @@
         <option name="unsigned"/>
       </options>
     </field>
-    <field name="packetLoss" type="float" column="packet_loss" precision="2" scale="3" nullable="true"/>
+    <field name="packetLoss" type="float" column="packet_loss" precision="2" scale="4" nullable="true"/>
     <field name="timestamp" type="datetime" column="timestamp" nullable="false"/>
   </entity>
 </doctrine-mapping>

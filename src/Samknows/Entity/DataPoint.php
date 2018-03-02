@@ -4,7 +4,6 @@ namespace Samknows\Entity;
 
 /**
  * DataPoint
- * @ORM\Entity(repositoryClass=Samknows\Repository\DataPoint")
  */
 class DataPoint
 {
