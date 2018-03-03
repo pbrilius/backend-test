@@ -33,7 +33,7 @@ class AggregatedDataPoints
     private $downloadMax = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $downloadAvg = '0';
 
@@ -53,7 +53,7 @@ class AggregatedDataPoints
     private $uploadMax = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $uploadAvg = '0';
 
@@ -73,7 +73,7 @@ class AggregatedDataPoints
     private $latencyMax = '0';
 
     /**
-     * @var integer
+     * @var float
      */
     private $latencyAvg = '0';
 
@@ -231,7 +231,7 @@ class AggregatedDataPoints
     /**
      * Set downloadAvg
      *
-     * @param integer $downloadAvg
+     * @param float $downloadAvg
      *
      * @return AggregatedDataPoints
      */
@@ -327,7 +327,7 @@ class AggregatedDataPoints
     /**
      * Set uploadAvg
      *
-     * @param integer $uploadAvg
+     * @param float $uploadAvg
      *
      * @return AggregatedDataPoints
      */
@@ -341,7 +341,7 @@ class AggregatedDataPoints
     /**
      * Get uploadAvg
      *
-     * @return integer
+     * @return float
      */
     public function getUploadAvg()
     {
@@ -423,7 +423,7 @@ class AggregatedDataPoints
     /**
      * Set latencyAvg
      *
-     * @param integer $latencyAvg
+     * @param float $latencyAvg
      *
      * @return AggregatedDataPoints
      */
@@ -437,7 +437,7 @@ class AggregatedDataPoints
     /**
      * Get latencyAvg
      *
-     * @return integer
+     * @return float
      */
     public function getLatencyAvg()
     {

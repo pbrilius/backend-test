@@ -33,7 +33,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="downloadAvg" type="integer" column="download_avg" nullable="false">
+    <field name="downloadAvg" type="float" precision="2" scale="8" column="download_avg" nullable="false">
       <options>
         <option name="unsigned"/>
         <option name="default">0</option>
@@ -57,7 +57,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="uploadAvg" type="integer" column="upload_avg" nullable="false">
+    <field name="uploadAvg" type="float" precision="2" scale="8" column="upload_avg" nullable="false">
       <options>
         <option name="unsigned"/>
         <option name="default">0</option>
@@ -81,7 +81,7 @@
         <option name="default">0</option>
       </options>
     </field>
-    <field name="latencyAvg" type="integer" column="latency_avg" nullable="false">
+    <field name="latencyAvg" type="float" precision="2" scale="8" column="latency_avg" nullable="false">
       <options>
         <option name="unsigned"/>
         <option name="default">0</option>
