@@ -35,7 +35,7 @@ class AggregatedDataPoints
     /**
      * @var float
      */
-    private $downloadAvg = '0.00';
+    private $downloadAvg = '0';
 
     /**
      * @var integer
@@ -55,7 +55,7 @@ class AggregatedDataPoints
     /**
      * @var float
      */
-    private $uploadAvg = '0.00';
+    private $uploadAvg = '0';
 
     /**
      * @var integer
@@ -75,27 +75,27 @@ class AggregatedDataPoints
     /**
      * @var float
      */
-    private $latencyAvg = '0.00';
+    private $latencyAvg = '0';
 
     /**
      * @var float
      */
-    private $packetLossMin = '0.00';
+    private $packetLossMin = '0';
 
     /**
      * @var float
      */
-    private $packetLossMedian = '0.00';
+    private $packetLossMedian = '0';
 
     /**
      * @var float
      */
-    private $packetLossMax = '0.00';
+    private $packetLossMax = '0';
 
     /**
      * @var float
      */
-    private $packetLossAvg = '0.00';
+    private $packetLossAvg = '0';
 
     /**
      * @var integer
@@ -245,7 +245,7 @@ class AggregatedDataPoints
     /**
      * Get downloadAvg
      *
-     * @return float
+     * @return integer
      */
     public function getDownloadAvg()
     {

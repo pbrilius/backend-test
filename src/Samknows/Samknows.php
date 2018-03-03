@@ -15,12 +15,23 @@ const INDICATOR_MAX = 'MAX';
 const INDICATOR_MEDIAN = 'MEDIAN';
 const INDICATOR_AVG = 'AVG';
 
+const TYPE_FLOAT = 'float';
+const TYPE_INT = 'int';
+
 const METRICS = [
     \Samknows\METRICS_DOWNLOAD,
     \Samknows\MEtRICS_UPLOAD,
     \Samknows\METRICS_LATENCY,
     \Samknows\METRICS_PACKET_LOSS,
 ];
+
+const METRICS_TYPES_REGEX = [
+    \Samknows\TYPE_FLOAT => '(avg|packet_loss)'
+];
+
+const FLOAT_FORMAT_DECIMALS = 2;
+const FLOAT_THOUSANDS_SEPARATOR = '';
+const FLOAT_DECIMALS_POINT = '.';
 
 const INDICATORS = [
     \Samknows\INDICATOR_MIN,

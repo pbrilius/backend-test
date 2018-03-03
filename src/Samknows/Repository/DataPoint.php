@@ -58,6 +58,8 @@ class DataPoint extends DataPointRepository
         $em = $this->getEntityManager();
         foreach ($aggregatedFields as $row) {
             $aggregatedDataPoints = new AggregatedDataPoints();
+//            var_dump($row);
+//            die;
             foreach ($row as $fieldName => $field) {
                 switch ($fieldName) {
                     case 'formatted_date':
@@ -70,7 +72,21 @@ class DataPoint extends DataPointRepository
                         $aggregatedDataPoints->setSampleSize($field);
                         break;
                     default:
-                        $fieldParts = explode('_', $fieldName);
+                        preg_match(\Samknows\METRICS_TYPES_REGEX[\Samknows\TYPE_FLOAT], $fieldName, $matches);
+                        var_dump('matches count');
+                        var_dump(count($matches));
+                        if (!empty($matches)) {
+                            var_dump('float field');
+                            var_dump((float) $field);
+//                            exit;
+                            $field = number_format((float) $field,
+                                \Samknows\FLOAT_FORMAT_DECIMALS,
+                                \Samknows\FLOAT_DECIMALS_POINT,
+                                \Samknows\FLOAT_THOUSANDS_SEPARATOR);
+                            var_dump('formatted field');
+                            var_dump($field);
+                        }
+                        $fieldParts = explode('_' , $fieldName);
                         $indicator = $fieldParts[0];
                         $metric = '';
                         for ($a = 1; $a < count($fieldParts); $a++) {
@@ -86,6 +102,8 @@ class DataPoint extends DataPointRepository
                 }
             }
             try {
+                var_dump('aggregated supported indicators');
+                var_dump((array) $aggregatedDataPoints);
                 $em->persist($aggregatedDataPoints);
                 $em->flush();
             } catch (\Exception $e) {
@@ -169,40 +187,23 @@ class DataPoint extends DataPointRepository
                         // var_dump($aggregatedUnsuppotedIndicators[$unsupportedIndicator]);
                         var_dump('test data indexes');
                         var_dump(array_keys($aggregatedUnsuppotedIndicators));
-                        // var_dump($groupedUnsupportedIndicators[$unsupportedIndicator]);
-                        // var_dump($groupedUnsupportedIndicators[$unsupportedIndicator][$metric]);
-                        // var_dump($groupedUnsupportedIndicators[$unsupportedIndicator][$metric][$unit]);
-                        // var_dump($groupedUnsupportedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate]);
-//                        continue;
                         var_dump('offset types test');
                         var_dump($unsupportedIndicator);
                         var_dump($metric);
                         var_dump($unit);
                         var_dump($formattedDate);
                         if ($size % 2 == 0) {
-                            // $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate] = 'test a1';
                             $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate]
                                 = round(($hourData[(floor($size / 2))] + $hourData[ceil($size / 2)]) / 2, 2);
                         } else {
-                            // $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate] = 'test a2';
                             $aggregatedUnsuppotedIndicators[$unsupportedIndicator][$metric][$unit][$formattedDate] = $hourData[$size / 2];
                         }
                     }
                 }
             }
         }
-        var_dump(array_keys($aggregatedUnsuppotedIndicators));
-        // return;
         foreach ($aggregatedUnsuppotedIndicators as $indicator => $metrics) {
             foreach ($metrics as $metric => $metricData) {
-//                $formattedMetric = '';
-//                $metricParts = explode('_', $metric);
-//                for ($i = 1; $i < count($metricParts); $i++) {
-//                    $formattedMetric .= mb_convert_case($metricParts[$i], MB_CASE_TITLE);
-//                }
-//                $formattedMetric = $metricParts[0] . $formattedMetric;
-//                var_dump($metric);
-//                var_dump($formattedMetric);
                 foreach ($metricData as $unit => $unitData) {
                     var_dump($unit);
                     var_dump($unitData);
@@ -216,37 +217,55 @@ class DataPoint extends DataPointRepository
                             ]);
                         var_dump('entity length');
                         var_dump(count($aggregatedDataPoints));
-                        continue;
+                        if (empty($aggregatedDataPoints)) {
+                            $aggregatedDataPoints = new AggregatedDataPoints();
+                            $aggregatedDataPoints->setUnitId($unit);
+                            $aggregatedDataPoints->setHour($formattedDate);
+                        }
+                        var_dump('entity');
+                        var_dump(get_class($aggregatedDataPoints));
+                        //                        continue;
                         var_dump($indicator);
                         var_dump($metric);
                         $formattedMetric = '';
                         $metricParts = explode('_', $metric);
-                        for ($i = 1; $i < count($metricParts); $i++) {
+                        var_dump('$metricParts');
+                        var_dump($metricParts);
+                        for ($i = 0; $i < count($metricParts); $i++) {
                             $formattedMetric .= mb_convert_case($metricParts[$i], MB_CASE_TITLE);
                         }
-                        $formattedMetric = mb_convert_case($metricParts[0] . $formattedMetric, MB_CASE_TITLE);
+                        var_dump('$formattedMetric');
+                        var_dump($formattedMetric);
+//                        $formattedMetric = mb_convert_case($metricParts[0] . $formattedMetric, MB_CASE_TITLE);
+                        var_dump('$formattedMetric');
+                        var_dump($formattedMetric);
                         $setter = 'set' . $formattedMetric . mb_convert_case($indicator, MB_CASE_TITLE);
                         var_dump($formattedMetric);
                         var_dump($setter);
                         //                        continue;
                         var_dump('method exists');
                         var_dump(method_exists($aggregatedDataPoints, $setter));
+                        var_dump('$aggregatedDataPoints class');
                         var_dump(get_class($aggregatedDataPoints));
-                        continue;
+//                        continue;
                         call_user_func([
                             $aggregatedDataPoints,
                             $setter
                         ], is_null($parameter) ? 0 : $parameter);
                         var_dump((array) $aggregatedDataPoints);
-                        $em
-                            ->persist($aggregatedDataPoints)
-                            ->flush();
+                        var_dump('agg id');
+                        var_dump($aggregatedDataPoints->getId());
+//                        continue;
+                        if ($aggregatedDataPoints->getId()) {
+                            $em->flush();
+                        } else {
+                            $em
+                                ->persist()
+                                ->flush();
+                        }
                     }
                 }
             }
         }
-
-//        var_dump($groupedUnsupportedIndicators);
-//        die;
     }
 }
