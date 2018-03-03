@@ -9,6 +9,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Helper\Table;
 
 /**
  * Description of SearchCommand
@@ -53,10 +54,28 @@ class SearchCommand extends Command
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $input->get($arguments);
-        $conditions = $arguments;
-        $response = $this->searchModel->search($conditions);
-        $output->writeln($response);
+        var_dump('getArguments');
+        var_dump($input->getArguments());
+        var_dump($input->getOptions());
+        $criteria = [
+            'unit' => $input->getOptions()['unit'],
+            'metric' => $input->getOptions()['metric'],
+            'hour' => $input->getOptions()['hour'],
+        ];
+        $entries = $this->searchModel->search($criteria);
+
+        $table = new Table($output);
+        $table
+            ->setHeaders(['Unit',
+                'Hour',
+                \Samknows\INDICATOR_AVG,
+                \Samknows\INDICATOR_MAX,
+                \Samknows\INDICATOR_MEDIAN,
+                \Samknows\INDICATOR_MIN,
+            ])
+            ->setRows($entries)
+        ;
+        $table->render();
     }
     
     public function setSearchModel(SearchModel $searchModel)

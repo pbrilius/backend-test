@@ -33,10 +33,10 @@ class SearchModel
         return $this;
     }
 
-    public function search($conditions)
+    public function search($criteria)
     {
         $aggregatedDataPointsRepository = $this->getAggregatedDataPointsRepository();
-        $aggregatedDataPointsRepository->search($conditions);
+        $aggregatedDataPointsRepository->findBy($criteria);
     }
 
 }
