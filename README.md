@@ -23,13 +23,15 @@ would be implemented:
 * Paragonie libsodium implementation together with UUID ORM entities generation
 enabling and empowering more randomized UUID assignation to the data entries
 and therefore concealing the statistical view of the database data (as by
-default INT(11) AUTOINCREMENT UNSIGNED NO NULL triggers the summing view of
+default INT(11) AUTOINCREMENT UNSIGNED NOT   NULL triggers the summing view of
 the stored data and could be easily exploited by the hacker gained access to 
 the database, or at least to a single column of several database tables)
 * The entities extension, so that additional entities like Unit, maybe some
 aggregation measurements entities are added to the database and XML
 mappings, more following the ORM methodology and approach
 * Fixtures installation, adding generated fake data to the application setup
+* Refinement of commands description, help and explanation, so that the end user
+could see the commands usage examples and available input arguments options
 
 # Note
 
