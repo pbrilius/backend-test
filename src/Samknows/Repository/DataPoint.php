@@ -159,7 +159,7 @@ class DataPoint extends DataPointRepository
             }
         }
         var_dump('$groupedUnsupportedIndicators');
-       var_dump(array_keys($groupedUnsupportedIndicators));
+        var_dump(array_keys($groupedUnsupportedIndicators));
     //    return;
         $aggregatedUnsuppotedIndicators = [];
         foreach ($groupedUnsupportedIndicators as $unsupportedIndicator => $metrics) {
