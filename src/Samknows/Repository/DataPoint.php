@@ -202,6 +202,7 @@ class DataPoint extends DataPointRepository
                 }
             }
         }
+
         foreach ($aggregatedUnsuppotedIndicators as $indicator => $metrics) {
             foreach ($metrics as $metric => $metricData) {
                 foreach ($metricData as $unit => $unitData) {

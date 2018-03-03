@@ -2,7 +2,16 @@
 ```
 composer install
 cp config/services.yml.dist config/services.yml
+vendor/bin/doctrine orm:schema-tool:create
+vendor/bin/doctrine orm:schema-tool:validate
 ```
+
+# Usage
+
+> The commands available for usage:
+* `php command.php app:load-data "data/testdata.json"`
+* `php command.php app:aggregate`
+* `php command.php app:search --unit=<unitId> --metric=<(download|upload|packet_loss|latency)> --hour=<[0..24]>`
 
 # Elaboration
 
@@ -19,7 +28,7 @@ the stored data and could be easily exploited by the hacker gained access to
 the database, or at least to a single column of several database tables)
 * The entities extension, so that additional entities like Unit, maybe some
 aggregation measurements entities are added to the database and XML
-mappings, more following the ORM methodology and approach.
+mappings, more following the ORM methodology and approach
 * Fixtures installation, adding generated fake data to the application setup
 
 # Note
@@ -27,4 +36,4 @@ mappings, more following the ORM methodology and approach.
 > The following parts are more of an interest in the applicatino:
 * Fixed scale and precision FLOAT MySQL data type, which for median indicators
 and aggregation allows and empowers more thorough and faster storing,
-reading and displaying to the UI,
+reading and displaying to the UI

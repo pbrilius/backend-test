@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2abe51b-aff1-4fd9-8a48-39def5002327" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" afterPath="" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/mappings.bak/Samknows.Entity.AggregatedDataPoints.dcm.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/mappings.bak/Samknows.Entity.DataPoint.dcm.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Entity.bak/AggregatedDataPoints.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Entity.bak/DataPoint.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" afterPath="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,23 +41,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fixtures.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/init/fixtures.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="308">
-                <caret line="22" column="76" lean-forward="false" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+              <first_editor relative-caret-position="492">
+                <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
                 <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TASK.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TASK.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-126">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding>
+                  <marker date="1519604113538" expanded="true" signature="2822:3406" ph="[...]" />
+                  <marker date="1519604113538" expanded="true" signature="2826:3397" ph="{...}" />
+                  <marker date="1519604113538" expanded="true" signature="2861:3393" ph="{...}" />
+                  <marker date="1519604113538" expanded="true" signature="2881:2993" ph="[...]" />
+                  <marker date="1519604113538" expanded="true" signature="2891:2975" ph="{&quot;timestamp&quot;: &quot;2017-02-10 17:00:00&quot;...}" />
+                  <marker date="1519604113538" expanded="true" signature="3011:3124" ph="[...]" />
+                  <marker date="1519604113538" expanded="true" signature="3021:3105" ph="{&quot;timestamp&quot;: &quot;2017-02-28 17:00:00&quot;...}" />
+                  <marker date="1519604113538" expanded="true" signature="3143:3254" ph="[...]" />
+                  <marker date="1519604113538" expanded="true" signature="3153:3235" ph="{&quot;timestamp&quot;: &quot;2017-02-22 16:00:00&quot;...}" />
+                  <marker date="1519604113538" expanded="true" signature="3277:3387" ph="[...]" />
+                  <marker date="1519604113538" expanded="true" signature="3287:3368" ph="{&quot;timestamp&quot;: &quot;2017-02-08 05:00:00&quot;...}" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -73,8 +82,8 @@
       <file leaf-file-name="DataPoint.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="203" column="9" lean-forward="true" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
+            <state relative-caret-position="1680">
+              <caret line="224" column="25" lean-forward="true" selection-start-line="224" selection-start-column="25" selection-end-line="224" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -142,8 +151,8 @@
         <option value="$PROJECT_DIR$/mappings/Samknows.Entity.DataPoint.dcm.xml" />
         <option value="$PROJECT_DIR$/src/Samknows/Samknows.php" />
         <option value="$PROJECT_DIR$/mappings/Samknows.Entity.AggregatedDataPoints.dcm.xml" />
-        <option value="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -350,12 +359,12 @@
       <workItem from="1520029179774" duration="56000" />
       <workItem from="1520084046999" duration="1981000" />
       <workItem from="1520088399277" duration="3026000" />
-      <workItem from="1520092591159" duration="3168000" />
+      <workItem from="1520092591159" duration="3792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8231000" />
+    <option name="totallyTimeSpent" value="8855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -632,22 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="203" column="9" lean-forward="true" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/AggregatedDataPoints.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Entity/DataPoint.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
@@ -664,10 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php">
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/AggregatedDataPoints.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+        <state relative-caret-position="314">
+          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -680,11 +673,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="224" column="25" lean-forward="true" selection-start-line="224" selection-start-column="25" selection-end-line="224" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TASK.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-126">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1519604113538" expanded="true" signature="2822:3406" ph="[...]" />
+              <marker date="1519604113538" expanded="true" signature="2826:3397" ph="{...}" />
+              <marker date="1519604113538" expanded="true" signature="2861:3393" ph="{...}" />
+              <marker date="1519604113538" expanded="true" signature="2881:2993" ph="[...]" />
+              <marker date="1519604113538" expanded="true" signature="2891:2975" ph="{&quot;timestamp&quot;: &quot;2017-02-10 17:00:00&quot;...}" />
+              <marker date="1519604113538" expanded="true" signature="3011:3124" ph="[...]" />
+              <marker date="1519604113538" expanded="true" signature="3021:3105" ph="{&quot;timestamp&quot;: &quot;2017-02-28 17:00:00&quot;...}" />
+              <marker date="1519604113538" expanded="true" signature="3143:3254" ph="[...]" />
+              <marker date="1519604113538" expanded="true" signature="3153:3235" ph="{&quot;timestamp&quot;: &quot;2017-02-22 16:00:00&quot;...}" />
+              <marker date="1519604113538" expanded="true" signature="3277:3387" ph="[...]" />
+              <marker date="1519604113538" expanded="true" signature="3287:3368" ph="{&quot;timestamp&quot;: &quot;2017-02-08 05:00:00&quot;...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="308">
-            <caret line="22" column="76" lean-forward="false" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+          <first_editor relative-caret-position="492">
+            <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
             <folding />
           </first_editor>
           <second_editor />
