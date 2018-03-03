@@ -36,7 +36,20 @@ class SearchModel
     public function search($criteria)
     {
         $aggregatedDataPointsRepository = $this->getAggregatedDataPointsRepository();
-        $aggregatedDataPointsRepository->findBy($criteria);
+        array_pop($criteria);
+        $metrics = $aggregatedDataPointsRepository->findBy($criteria);
+        $filteredMetrics = [];
+        foreach ($metrics as $row) {
+            $filteredMetricsRow = [
+                'hour' => $row['hour'],
+            ];
+            foreach (\Samknows\METRICS as $metric) {
+                $filteredMetricsRow[$metric] = $row[$criteria['metric'] . mb_convert_encoding($metric, MB_CASE_TITLE)];
+            }
+            $filteredMetrics[] = $filteredMetricsRow;
+        }
+
+        return $filteredMetrics;
     }
 
 }

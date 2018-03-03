@@ -65,14 +65,15 @@ class SearchCommand extends Command
         $entries = $this->searchModel->search($criteria);
 
         $table = new Table($output);
+        $headers = [
+            'Unit',
+            'Hour',
+        ];
+        foreach (\Samknows\INDICATORS as $indicator) {
+            $headers[] = $indicator;
+        }
         $table
-            ->setHeaders(['Unit',
-                'Hour',
-                \Samknows\INDICATOR_AVG,
-                \Samknows\INDICATOR_MAX,
-                \Samknows\INDICATOR_MEDIAN,
-                \Samknows\INDICATOR_MIN,
-            ])
+            ->setHeaders($headers)
             ->setRows($entries)
         ;
         $table->render();
