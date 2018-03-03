@@ -42,7 +42,7 @@ class SearchCommand extends Command
                     new InputDefinition([
                         new InputOption('unit', 'u', InputOption::VALUE_REQUIRED),
                         new InputOption('metric', 'm', InputOption::VALUE_REQUIRED),
-                        new InputOption('hour', 'h', InputOption::VALUE_REQUIRED),
+                        new InputOption('hour', 't', InputOption::VALUE_REQUIRED),
                     ])
                 )
                 ->setHelp('This command allows search data for entries'
