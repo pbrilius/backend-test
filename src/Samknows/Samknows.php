@@ -16,6 +16,7 @@ const INDICATOR_MEDIAN = 'MEDIAN';
 const INDICATOR_AVG = 'AVG';
 
 const TYPE_FLOAT = 'float';
+const TYPE_FLOAT_GETTER = 'floatGetter';
 const TYPE_INT = 'int';
 
 const METRICS = [
@@ -26,7 +27,8 @@ const METRICS = [
 ];
 
 const METRICS_TYPES_REGEX = [
-    \Samknows\TYPE_FLOAT => '(avg|packet_loss)'
+    \Samknows\TYPE_FLOAT => '(avg|packet_loss)',
+    \Samknows\TYPE_FLOAT_GETTER => '(Avg|packetLoss)'
 ];
 
 const FLOAT_FORMAT_DECIMALS = 2;

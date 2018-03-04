@@ -70,9 +70,12 @@ class SearchCommand extends Command
             'Hour',
         ];
         foreach (\Samknows\INDICATORS as $indicator) {
-            $headers[] = mb_convert_case($criteria['metric'], MB_CASE_TITLE) . ' ' . mb_convert_case($indicator, MB_CASE_TITLE);
+            $headers[] = mb_convert_case(
+                str_replace('_', ' ', $criteria['metric']), MB_CASE_TITLE)
+                . ' '
+                . mb_convert_case($indicator, MB_CASE_TITLE);
         }
-        $headers[] = 'Sample size';
+        $headers[] = 'Sample Size';
         $table
             ->setHeaders($headers)
             ->setRows($entries)

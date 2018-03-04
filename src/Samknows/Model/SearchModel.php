@@ -58,17 +58,25 @@ class SearchModel
                 var_dump('metric');
                 var_dump($metric);
                 var_dump(mb_convert_case($metric, MB_CASE_TITLE));
-                $getter = 'get' . mb_convert_case($metric, MB_CASE_TITLE) . mb_convert_case($indicator, MB_CASE_TITLE);
                 var_dump('getter');
+                $formattedMetric = '';
+                $metricParts = explode('_', $metric);
+                for ($i = 1; $i < count($metricParts); $i++) {
+                    $formattedMetric .= mb_convert_case($metricParts[$i], MB_CASE_TITLE);
+                }
+                $formattedMetric = $metricParts[0] . $formattedMetric;
+                $getter = 'get' . mb_convert_case($formattedMetric , MB_CASE_TITLE) . mb_convert_case($indicator, MB_CASE_TITLE);
                 var_dump($getter);
                 $field = call_user_func([$row, $getter]);
-                preg_match('/' . \Samknows\METRICS_TYPES_REGEX . '/i', $getter,  $matches);
+                preg_match(\Samknows\METRICS_TYPES_REGEX[\Samknows\TYPE_FLOAT_GETTER], $getter,  $matches);
                 if (!empty($matches)) {
                     $field = number_format($field,
                         \Samknows\FLOAT_FORMAT_DECIMALS,
                         \Samknows\FLOAT_DECIMALS_POINT,
                         \Samknows\FLOAT_THOUSANDS_SEPARATOR
                     );
+                    var_dump('formattedField');
+                    var_dump($field);
                 }
                 $filteredMetricsRow[$metric . mb_convert_case($indicator, MB_CASE_TITLE)] = $field;
             }
