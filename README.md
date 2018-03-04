@@ -3,7 +3,11 @@
 composer install
 cp config/services.yml.dist config/services.yml
 vendor/bin/doctrine orm:schema-tool:create
-vendor/bin/doctrine orm:schema-tool:validate
+vendor/bin/doctrine orm:validate-schema
+```
+Or import latest database snapshot in backup dir:
+```
+zcat backup/{YYY-MM-DD}-backend-test.sql.gz | mysql -nEv -ubackend_test -pbackend_test backend_test
 ```
 
 # Usage

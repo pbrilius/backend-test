@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Samknows\Model\AggregateModel;
 
 /**
@@ -52,7 +53,17 @@ class AggregateCommand extends Command
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->aggregateModel->aggregateDataPoints();
+        $io = new SymfonyStyle($input, $output);
+        $io->title('Aggregation');
+        $io->section('Aggregating');
+        try {
+            $io->progressStart();
+            $this->aggregateModel->aggregateDataPoints();
+            $io->progressFinish();
+            $io->success('Data aggregated');
+        } catch (\Exception $e) {
+            $io->error($e->getMessage());
+        }
     }
 
 }

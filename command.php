@@ -8,9 +8,6 @@ use Samknows\Command\LoadDataCommand;
 use Samknows\Command\AggregateCommand;
 use Samknows\Command\SearchCommand;
 use Samknows\Tool\Application;
-//use Symfony\Component\DependencyInjection\ContainerBuilder;
-//use Symfony\Component\Config\FileLocator;
-//use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 use DI\ContainerBuilder;
 use Doctrine\Common\Cache\ArrayCache;
@@ -33,7 +30,8 @@ $application->add($container->get(SearchCommand::class));
 $application->setDefaultCommand($container
         ->get(LoaddataCommand::class)
         ->getName(), false);
-
+//var_dump($container->get(LoadDataCommand::class)->getDefinition());
+//exit;
 $application->run();
 
 

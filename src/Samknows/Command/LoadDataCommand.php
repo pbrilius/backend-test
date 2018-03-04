@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Description of LoaddataCommand
@@ -17,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class LoadDataCommand extends Command
 {
     
-    protected static $defaultName = 'app:loaddata';
+    protected static $defaultName = 'app:load-data';
     
     /**
      *
@@ -54,10 +55,16 @@ class LoadDataCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $fileName = $input->getArgument('data-file');
+        $io = new SymfonyStyle($input, $output);
+        $io->title('Data Load');
+        $io->section('Loading data');
+        $io->progressStart();
         try {
             $this->loadDataModel->loadData($fileName);
+            $io->progressFinish();
+            $io->success('Data loaded');
         } catch (\Exception $e) {
-            return $e->getMessage();
+            $io->error($e->getMessage());
         }
     }
 }
