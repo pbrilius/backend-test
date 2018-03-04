@@ -58,7 +58,6 @@ final class LoadDataCommandTest extends CommadTestCase
             'data-file' => 'data/test-data.json',
         ));
 
-        // the output of the command in the console
         $output = $commandTester->getDisplay();
         $this->assertContains('Data loaded', $output);
     }

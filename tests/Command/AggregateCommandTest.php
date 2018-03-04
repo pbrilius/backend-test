@@ -2,11 +2,11 @@
 
 namespace Samknows\Tests\Command;
 
-use Samknows\Command\loadDataCommand;
+use Samknows\Command\AggregateCommand;
 use Samknows\Tests\Setup\CommadTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
-final class LoadDataCommandTest extends CommadTestCase
+final class aggregateCommandTest extends CommadTestCase
 {
 
     public function setUp()/* The :void return type declaration that should be here would cause a BC issue */
@@ -17,50 +17,48 @@ final class LoadDataCommandTest extends CommadTestCase
     public function testCanBeCreated(): void
     {
         $container = $this->getContainer();
-        $this->assertEquals(LoadDataCommand::class, $container->get(LoadDataCommand::class));
+        $this->assertEquals(AggregateCommand::class, $container->get(AggregateCommand::class));
     }
 
     public function testCanBeNamed()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container->get(LoadDataCommand::class);
-        $this->assertEquals('app:load-data', $loadDataCommand->getName());
+        /* @var $aggregateCommand AggregateCommand */
+        $aggregateCommand = $container->get(AggregateCommand::class);
+        $this->assertEquals('app:load-data', $aggregateCommand->getName());
     }
 
     public function testCanBeCreatedWithArguments()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container->get(LoadDataCommand::class);
-        $this->assertGreaterThanOrEqual(1, $loadDataCommand->getDefinition()->getArgumentCount());
+        /* @var $aggregateCommand aggregateCommand */
+        $aggregateCommand = $container->get(aggregateCommand::class);
+        $this->assertEqual(0, $aggregateCommand->getDefinition()->getArgumentCount());
     }
 
     public function testCanBeCreatedWithDescription()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container-get(LoadDataCommand::class);
-        $this->assertStringMatchesFormat('[\w\s\.]{8,}', $loadDataCommand->getDescription());
+        /* @var $aggregateCommand aggregateCommand */
+        $aggregateCommand = $container-get(aggregateCommand::class);
+        $this->assertStringMatchesFormat('[\w\s\.]{8,}', $aggregateCommand->getDescription());
     }
 
     public function testExecute()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container->get(LoadDataCommand::class);
+        /* @var $aggregateCommand aggregateCommand */
+        $aggregateCommand = $container->get(aggregateCommand::class);
         $application = $this->getApplication();
-        $command = $application->find($loadDataCommand->getName());
+        $command = $application->find($aggregateCommand->getName());
 
         $commandTester = new CommandTester($command);
         $commandTester->execute(array(
             'command'  => $command->getName(),
-            'data-file' => 'data/test-data.json',
         ));
 
-        // the output of the command in the console
         $output = $commandTester->getDisplay();
-        $this->assertContains('Data loaded', $output);
+        $this->assertContains('Data aggregated', $output);
     }
 
 }

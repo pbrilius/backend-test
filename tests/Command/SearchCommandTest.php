@@ -2,11 +2,11 @@
 
 namespace Samknows\Tests\Command;
 
-use Samknows\Command\loadDataCommand;
+use Samknows\Command\SearchCommand;
 use Samknows\Tests\Setup\CommadTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
-final class LoadDataCommandTest extends CommadTestCase
+final class SearchCommandTest extends CommadTestCase
 {
 
     public function setUp()/* The :void return type declaration that should be here would cause a BC issue */
@@ -17,50 +17,51 @@ final class LoadDataCommandTest extends CommadTestCase
     public function testCanBeCreated(): void
     {
         $container = $this->getContainer();
-        $this->assertEquals(LoadDataCommand::class, $container->get(LoadDataCommand::class));
+        $this->assertEquals(SearchCommand::class, $container->get(SearchCommand::class));
     }
 
     public function testCanBeNamed()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container->get(LoadDataCommand::class);
-        $this->assertEquals('app:load-data', $loadDataCommand->getName());
+        /* @var $searchCommand SearchCommand */
+        $searchCommand = $container->get(SearchCommand::class);
+        $this->assertEquals('app:search', $searchCommand->getName());
     }
 
     public function testCanBeCreatedWithArguments()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container->get(LoadDataCommand::class);
-        $this->assertGreaterThanOrEqual(1, $loadDataCommand->getDefinition()->getArgumentCount());
+        /* @var $searchCommand SearchCommand */
+        $searchCommand = $container->get(SearchCommand::class);
+        $this->assertGreaterThanOrEqual(3, $searchCommand->getDefinition()->getArgumentCount());
     }
 
     public function testCanBeCreatedWithDescription()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container-get(LoadDataCommand::class);
-        $this->assertStringMatchesFormat('[\w\s\.]{8,}', $loadDataCommand->getDescription());
+        /* @var $searchCommand SearchCommand */
+        $searchCommand = $container-get(SearchCommand::class);
+        $this->assertStringMatchesFormat('[\w\s\.]{8,}', $searchCommand->getDescription());
     }
 
     public function testExecute()
     {
         $container = $this->getContainer();
-        /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container->get(LoadDataCommand::class);
+        /* @var $searchCommand SearchCommand */
+        $searchCommand = $container->get(SearchCommand::class);
         $application = $this->getApplication();
-        $command = $application->find($loadDataCommand->getName());
+        $command = $application->find($searchCommand->getName());
 
         $commandTester = new CommandTester($command);
         $commandTester->execute(array(
             'command'  => $command->getName(),
-            'data-file' => 'data/test-data.json',
+            'unit' => '5',
+            'hour' => '16',
+            'metric' => 'download',
         ));
 
-        // the output of the command in the console
         $output = $commandTester->getDisplay();
-        $this->assertContains('Data loaded', $output);
+        $this->assertContains('Found data', $output);
     }
 
 }
