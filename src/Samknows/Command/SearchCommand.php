@@ -54,9 +54,6 @@ class SearchCommand extends Command
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        var_dump('getArguments');
-        var_dump($input->getArguments());
-        var_dump($input->getOptions());
         $criteria = [
             'unit' => $input->getOptions()['unit'],
             'metric' => $input->getOptions()['metric'],

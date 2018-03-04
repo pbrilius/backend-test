@@ -53,12 +53,7 @@ class LoadDataCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $args = $input->getArguments();
-        var_dump($args);
         $fileName = $input->getArgument('data-file');
-        var_dump('getcwd test a1');
-        var_dump(getcwd());
-        var_dump($fileName);
         try {
             $this->loadDataModel->loadData($fileName);
         } catch (\Exception $e) {

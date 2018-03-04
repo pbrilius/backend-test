@@ -40,13 +40,8 @@ class SearchModel
         $metric = $criteria['metric'];
         unset($criteria['metric']);
         $criteria['unitId'] = $criteria['unit'];
-        var_dump($criteria);
         unset($criteria['unit']);
-        var_dump($criteria);
         $metrics = $aggregatedDataPointsRepository->findBy($criteria);
-        var_dump('$metrics');
-        var_dump($metrics);
-//        exit;
         $filteredMetrics = [];
         /* @var $row AggregatedDataPoints */
         foreach ($metrics as $row) {
@@ -55,10 +50,6 @@ class SearchModel
                 'hour' => (int) $row->getHour() + 1,
             ];
             foreach (\Samknows\INDICATORS as $indicator) {
-                var_dump('metric');
-                var_dump($metric);
-                var_dump(mb_convert_case($metric, MB_CASE_TITLE));
-                var_dump('getter');
                 $formattedMetric = '';
                 $metricParts = explode('_', $metric);
                 for ($i = 1; $i < count($metricParts); $i++) {
@@ -66,7 +57,6 @@ class SearchModel
                 }
                 $formattedMetric = $metricParts[0] . $formattedMetric;
                 $getter = 'get' . mb_convert_case($formattedMetric , MB_CASE_TITLE) . mb_convert_case($indicator, MB_CASE_TITLE);
-                var_dump($getter);
                 $field = call_user_func([$row, $getter]);
                 preg_match(\Samknows\METRICS_TYPES_REGEX[\Samknows\TYPE_FLOAT_GETTER], $getter,  $matches);
                 if (!empty($matches)) {
@@ -75,17 +65,13 @@ class SearchModel
                         \Samknows\FLOAT_DECIMALS_POINT,
                         \Samknows\FLOAT_THOUSANDS_SEPARATOR
                     );
-                    var_dump('formattedField');
-                    var_dump($field);
                 }
                 $filteredMetricsRow[$metric . mb_convert_case($indicator, MB_CASE_TITLE)] = $field;
             }
             $filteredMetricsRow['sampleSize'] = $row->getSampleSize();
             $filteredMetrics[] = $filteredMetricsRow;
         }
-        var_dump('$filteredMetrics');
-//        var_dump($filteredMetrics);
-//        exit;
+
         return $filteredMetrics;
     }
 
