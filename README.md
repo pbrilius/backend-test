@@ -39,3 +39,5 @@ could see the commands usage examples and available input arguments options
 * Fixed scale and precision FLOAT MySQL data type, which for median indicators
 and aggregation allows and empowers more thorough and faster storing,
 reading and displaying to the UI
+* The display of the aggregated rows is formatted to the defined float type
+decimal length

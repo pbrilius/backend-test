@@ -3,6 +3,7 @@
 namespace Samknows\Model;
 
 use Doctrine\ORM\EntityRepository;
+use Samknows\Entity\AggregatedDataPoints;
 
 /**
  * Description of SearchModel
@@ -36,19 +37,47 @@ class SearchModel
     public function search($criteria)
     {
         $aggregatedDataPointsRepository = $this->getAggregatedDataPointsRepository();
-        array_pop($criteria);
+        $metric = $criteria['metric'];
+        unset($criteria['metric']);
+        $criteria['unitId'] = $criteria['unit'];
+        var_dump($criteria);
+        unset($criteria['unit']);
+        var_dump($criteria);
         $metrics = $aggregatedDataPointsRepository->findBy($criteria);
+        var_dump('$metrics');
+        var_dump($metrics);
+//        exit;
         $filteredMetrics = [];
+        /* @var $row AggregatedDataPoints */
         foreach ($metrics as $row) {
             $filteredMetricsRow = [
-                'hour' => $row['hour'],
+                'unitId' => $row->getUnitId(),
+                'hour' => (int) $row->getHour() + 1,
             ];
-            foreach (\Samknows\METRICS as $metric) {
-                $filteredMetricsRow[$metric] = $row[$criteria['metric'] . mb_convert_encoding($metric, MB_CASE_TITLE)];
+            foreach (\Samknows\INDICATORS as $indicator) {
+                var_dump('metric');
+                var_dump($metric);
+                var_dump(mb_convert_case($metric, MB_CASE_TITLE));
+                $getter = 'get' . mb_convert_case($metric, MB_CASE_TITLE) . mb_convert_case($indicator, MB_CASE_TITLE);
+                var_dump('getter');
+                var_dump($getter);
+                $field = call_user_func([$row, $getter]);
+                preg_match('/' . \Samknows\METRICS_TYPES_REGEX . '/i', $getter,  $matches);
+                if (!empty($matches)) {
+                    $field = number_format($field,
+                        \Samknows\FLOAT_FORMAT_DECIMALS,
+                        \Samknows\FLOAT_DECIMALS_POINT,
+                        \Samknows\FLOAT_THOUSANDS_SEPARATOR
+                    );
+                }
+                $filteredMetricsRow[$metric . mb_convert_case($indicator, MB_CASE_TITLE)] = $field;
             }
+            $filteredMetricsRow['sampleSize'] = $row->getSampleSize();
             $filteredMetrics[] = $filteredMetricsRow;
         }
-
+        var_dump('$filteredMetrics');
+//        var_dump($filteredMetrics);
+//        exit;
         return $filteredMetrics;
     }
 

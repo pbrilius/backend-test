@@ -60,7 +60,7 @@ class SearchCommand extends Command
         $criteria = [
             'unit' => $input->getOptions()['unit'],
             'metric' => $input->getOptions()['metric'],
-            'hour' => $input->getOptions()['hour'],
+            'hour' => (int) $input->getOptions()['hour'] - 1,
         ];
         $entries = $this->searchModel->search($criteria);
 
@@ -70,8 +70,9 @@ class SearchCommand extends Command
             'Hour',
         ];
         foreach (\Samknows\INDICATORS as $indicator) {
-            $headers[] = $indicator;
+            $headers[] = mb_convert_case($criteria['metric'], MB_CASE_TITLE) . ' ' . mb_convert_case($indicator, MB_CASE_TITLE);
         }
+        $headers[] = 'Sample size';
         $table
             ->setHeaders($headers)
             ->setRows($entries)
