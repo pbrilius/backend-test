@@ -65,6 +65,7 @@ class LoadDataCommand extends Command
             $io->progressFinish();
             $io->success('Data loaded');
         } catch (\Exception $e) {
+            $io->progressFinish();
             $io->error($e->getMessage());
         }
     }

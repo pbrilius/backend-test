@@ -69,7 +69,8 @@ class SearchModel
         $io->progressAdvance(20);
         $metrics = $aggregatedDataPointsRepository->findBy($criteria);
         $filteredMetrics = [];
-        $progressStep = ceil(80 / count($metrics));
+        $progressStep = 80 / (count($metrics) * count(\Samknows\INDICATORS));
+        $progressStepSum = 0;
         /* @var $row AggregatedDataPoints */
         foreach ($metrics as $row) {
             $filteredMetricsRow = [
@@ -94,7 +95,11 @@ class SearchModel
                     );
                 }
                 $filteredMetricsRow[$metric . mb_convert_case($indicator, MB_CASE_TITLE)] = $field;
-                $io->progressAdvance($progressStep);
+                $progressStepSum += $progressStep;
+                if ($progressStepSum > 1) {
+                    $io->progressAdvance($progressStep);
+                    $progressStepSum = 0;
+                }
             }
             $filteredMetricsRow['sampleSize'] = $row->getSampleSize();
             $filteredMetrics[] = $filteredMetricsRow;

@@ -59,6 +59,7 @@ class SearchCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title('Data Search');
         $io->section('Searching data');
+        $io->createProgressbar(\Samknows\PROGRESS_BAR_PERCENTAGE);
         $criteria = [
             'unit' => $input->getOptions()['unit'],
             'metric' => $input->getOptions()['metric'],
@@ -89,6 +90,7 @@ class SearchCommand extends Command
             $io->success('Found data');
             $table->render();
         } catch (\Exception $e) {
+            $io->progressFinish();
             $io->error($e->getMessage());
         }
     }

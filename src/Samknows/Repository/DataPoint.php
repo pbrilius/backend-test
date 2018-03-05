@@ -17,6 +17,11 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 class DataPoint extends DataPointRepository
 {
+    /**
+     * @var SymfonyStyle;
+     */
+    private $io;
+
     private function initAggregateQueryBuilder()
     {
         /* @var $qb QueryBuilder */
@@ -37,6 +42,7 @@ class DataPoint extends DataPointRepository
     public function aggregate()
     {
         $qb = $this->initAggregateQueryBuilder();
+        $io = $this->getIo();
 
         foreach (\Samknows\DOCTRINE_SUPPORTED_INDICATORS as $indicator) {
             foreach (\Samknows\METRICS as $metric) {
@@ -56,11 +62,12 @@ class DataPoint extends DataPointRepository
         $aggregatedFields = $qb
             ->getQuery()
             ->getArrayResult();
+        $io->progressAdvance(20);
+        $progressStep = 20 / count($aggregatedFields);
+        $progressStepSum = 0;
         $em = $this->getEntityManager();
         foreach ($aggregatedFields as $row) {
             $aggregatedDataPoints = new AggregatedDataPoints();
-//            var_dump($row);
-//            die;
             foreach ($row as $fieldName => $field) {
                 switch ($fieldName) {
                     case 'formatted_date':
@@ -100,7 +107,11 @@ class DataPoint extends DataPointRepository
                 $em->flush();
             } catch (\Exception $e) {
                 echo $e->getMessage() . "\n";
-                continue;
+            }
+            $progressStepSum += $progressStep;
+            if ($progressStepSum > 1) {
+                $io->progressAdvance();
+                $progressStepSum = 0;
             }
         }
         $doctrineUnsupportedIndicators = array_diff(\Samknows\INDICATORS,
@@ -137,6 +148,7 @@ class DataPoint extends DataPointRepository
                 $unsupportedIndicatorsAggregation[strtolower($unsupportedIndicator)][$metric] = $result;
             }
         }
+        $io->progressAdvance(20);
         $groupedUnsupportedIndicators = [];
         foreach ($unsupportedIndicatorsAggregation as $indicator => $metrics) {
             foreach ($metrics as $metric => $data) {
@@ -162,6 +174,7 @@ class DataPoint extends DataPointRepository
                 }
             }
         }
+        $io->progressAdvance(20);
 
         foreach ($aggregatedUnsuppotedIndicators as $indicator => $metrics) {
             foreach ($metrics as $metric => $metricData) {
@@ -199,5 +212,25 @@ class DataPoint extends DataPointRepository
                 }
             }
         }
+        $io->progressAdvance(20);
     }
+
+    /**
+     * @return SymfonyStyle
+     */
+    public function getIo(): SymfonyStyle
+    {
+        return $this->io;
+    }
+
+    /**
+     * @param SymfonyStyle $io
+     * @return DataPoint
+     */
+    public function setIo(SymfonyStyle $io): DataPoint
+    {
+        $this->io = $io;
+        return $this;
+    }
+
 }

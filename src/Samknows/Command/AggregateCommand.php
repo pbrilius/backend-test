@@ -18,8 +18,13 @@ use Samknows\Model\AggregateModel;
  */
 class AggregateCommand extends Command
 {
-    
+    /**
+     * @var string
+     */
     protected static $defaultName = 'app:aggregate';
+    /**
+     * @var AggregateModel
+     */
     private $aggregateModel;
     
     public function __construct(AggregateModel $aggregateModel)
@@ -57,11 +62,13 @@ class AggregateCommand extends Command
         $io->title('Aggregation');
         $io->section('Aggregating');
         try {
+            $io->createProgressbar(\Samknows\PROGRESS_BAR_PERCENTAGE);
             $io->progressStart();
             $this->aggregateModel->aggregateDataPoints();
             $io->progressFinish();
             $io->success('Data aggregated');
         } catch (\Exception $e) {
+            $io->progressFinish();
             $io->error($e->getMessage());
         }
     }

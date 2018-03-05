@@ -43,6 +43,9 @@ class AggregateModel
     {
         /* @var \Samknows\Repository\DataPoint $dataPointRepository */
         $dataPointRepository = $this->getDataPointRepository();
+        $io = $this->getIo();
+        $dataPointRepository->setIo($io);
+
         return $dataPointRepository->aggregate();
     }
 

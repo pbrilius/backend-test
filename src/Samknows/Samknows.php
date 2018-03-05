@@ -19,6 +19,11 @@ const TYPE_FLOAT = 'float';
 const TYPE_FLOAT_GETTER = 'floatGetter';
 const TYPE_INT = 'int';
 
+/**
+ * Progress bar percentage for Symfony Console Progress Bar
+ */
+const PROGRESS_BAR_PERCENTAGE = 100;
+
 const METRICS = [
     \Samknows\METRICS_DOWNLOAD,
     \Samknows\MEtRICS_UPLOAD,

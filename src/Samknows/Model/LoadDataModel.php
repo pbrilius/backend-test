@@ -63,8 +63,14 @@ class LoadDataModel
                 $dataPointsSum += count($unit->metrics->{$metricsUnit});
             }
         }
-        $progressStep = ceil(100 / $dataPointsSum);
+        var_dump('$dataPointsSum');
+        var_dump($dataPointsSum);
+//        exit;
+        $progressStep = 100 / $dataPointsSum;
+        $progressStepSum = 0;
         $io = $this->getIo();
+        $io->createProgressbar(\Samknows\PROGRESS_BAR_PERCENTAGE);
+        $io->progressStart();
         foreach ($decodedData as $unit) {
             foreach (\Samknows\METRICS as $metricsUnit) {
                 foreach ($unit->metrics->{$metricsUnit} as $dataEntry) {
@@ -76,11 +82,13 @@ class LoadDataModel
                     try {
                         $entityManager->persist($dataPoint);
                         $entityManager->flush();
-                        $io->progressAdvance($progressStep);
                     } catch (\Exception $e) {
                         echo $e->getMessage() . "\n";
-                        $io->progressAdvance($progressStep);
-                        continue;
+                    }
+                    $progressStepSum += $progressStep;
+                    if ($progressStepSum > 1) {
+                        $io->progressAdvance();
+                        $progressStepSum = 0;
                     }
                 }
             }
