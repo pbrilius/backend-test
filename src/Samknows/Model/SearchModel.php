@@ -4,6 +4,7 @@ namespace Samknows\Model;
 
 use Doctrine\ORM\EntityRepository;
 use Samknows\Entity\AggregatedDataPoints;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Description of SearchModel
@@ -17,6 +18,11 @@ class SearchModel
      * @var EntityRepository
      */
     private $aggregatedDataPointsRepository;
+
+    /**
+     * @var SymfonyStyle
+     */
+    private $io;
     
     public function __construct(EntityRepository $aggregatedDataPointsRepository)
     {
@@ -34,6 +40,24 @@ class SearchModel
         return $this;
     }
 
+    /**
+     * @return SymfonyStyle
+     */
+    public function getIo(): SymfonyStyle
+    {
+        return $this->io;
+    }
+
+    /**
+     * @param SymfonyStyle $io
+     * @return SearchModel
+     */
+    public function setIo(SymfonyStyle $io): SearchModel
+    {
+        $this->io = $io;
+        return $this;
+    }
+
     public function search($criteria)
     {
         $aggregatedDataPointsRepository = $this->getAggregatedDataPointsRepository();
@@ -41,8 +65,11 @@ class SearchModel
         unset($criteria['metric']);
         $criteria['unitId'] = $criteria['unit'];
         unset($criteria['unit']);
+        $io = $this->getIo();
+        $io->progressAdvance(20);
         $metrics = $aggregatedDataPointsRepository->findBy($criteria);
         $filteredMetrics = [];
+        $progressStep = ceil(80 / count($metrics));
         /* @var $row AggregatedDataPoints */
         foreach ($metrics as $row) {
             $filteredMetricsRow = [
@@ -67,6 +94,7 @@ class SearchModel
                     );
                 }
                 $filteredMetricsRow[$metric . mb_convert_case($indicator, MB_CASE_TITLE)] = $field;
+                $io->progressAdvance($progressStep);
             }
             $filteredMetricsRow['sampleSize'] = $row->getSampleSize();
             $filteredMetrics[] = $filteredMetricsRow;

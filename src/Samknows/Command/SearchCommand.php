@@ -66,6 +66,7 @@ class SearchCommand extends Command
         ];
         try {
             $io->progressStart();
+            $this->searchModel->setIo($io);
             $entries = $this->searchModel->search($criteria);
 
             $table = new Table($output);

@@ -8,6 +8,7 @@ use Samknows\Repository\QueryBuilder\DataPoint as DataPointRepository;
 use Samknows\Entity\AggregatedDataPoints;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Common\Collections\Criteria;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Description of DataPoint

@@ -3,6 +3,7 @@
 namespace Samknows\Model;
 
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Description of AggregateModel
@@ -13,9 +14,14 @@ class AggregateModel
 {
     /**
      *
-     * @var type EntityRepository
+     * @var EntityRepository
      */
     private $dataPointRepository;
+
+    /**
+     * @var SymfonyStyle
+     */
+    private $io;
 
     public function __construct(EntityRepository $dataPointRepository)
     {
@@ -39,5 +45,23 @@ class AggregateModel
         $dataPointRepository = $this->getDataPointRepository();
         return $dataPointRepository->aggregate();
     }
-    
+
+    /**
+     * @return SymfonyStyle
+     */
+    public function getIo(): SymfonyStyle
+    {
+        return $this->io;
+    }
+
+    /**
+     * @param SymfonyStyle $io
+     * @return AggregateModel
+     */
+    public function setIo(SymfonyStyle $io): AggregateModel
+    {
+        $this->io = $io;
+        return $this;
+    }
+
 }

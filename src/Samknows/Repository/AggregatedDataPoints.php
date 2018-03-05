@@ -40,8 +40,4 @@ class AggregatedDataPoints extends EntityRepository
         return $this;
     }
 
-    public function search($conditions)
-    {
-        $this->qb;
-    }
 }

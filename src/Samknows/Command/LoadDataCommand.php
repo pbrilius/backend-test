@@ -59,6 +59,7 @@ class LoadDataCommand extends Command
         $io->title('Data Load');
         $io->section('Loading data');
         $io->progressStart();
+        $this->loadDataModel->setIo($io);
         try {
             $this->loadDataModel->loadData($fileName);
             $io->progressFinish();
