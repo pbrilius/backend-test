@@ -106,7 +106,7 @@ class DataPoint extends DataPointRepository
                 $em->persist($aggregatedDataPoints);
                 $em->flush();
             } catch (\Exception $e) {
-                echo $e->getMessage() . "\n";
+                $io->error($e->getMessage());
             }
             $progressStepSum += $progressStep;
             if ($progressStepSum > 1) {
@@ -201,12 +201,16 @@ class DataPoint extends DataPointRepository
                             $aggregatedDataPoints,
                             $setter
                         ], is_null($parameter) ? 0 : $parameter);
-                        if ($aggregatedDataPoints->getId()) {
-                            $em->flush();
-                        } else {
-                            $em
-                                ->persist()
-                                ->flush();
+                        try {
+                            if ($aggregatedDataPoints->getId()) {
+                                $em->flush();
+                            } else {
+                                $em
+                                    ->persist()
+                                    ->flush();
+                            }
+                        } catch (\Exception $e) {
+                            $io->error($e->getMessage());
                         }
                     }
                 }

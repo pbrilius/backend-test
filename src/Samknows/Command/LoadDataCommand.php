@@ -58,6 +58,7 @@ class LoadDataCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title('Data Load');
         $io->section('Loading data');
+        $io->createProgressBar(\Samknows\PROGRESS_BAR_PERCENTAGE);
         $io->progressStart();
         $this->loadDataModel->setIo($io);
         try {

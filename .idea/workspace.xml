@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cba0d6e5-1669-402a-a88e-bd1f635e759b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php" afterPath="$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php" />
+      <change beforePath="$PROJECT_DIR$/src/Samknows/Command/FixtureCommand.php" afterPath="$PROJECT_DIR$/src/Samknows/Command/FixtureCommand.php" />
       <change beforePath="$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php" afterPath="$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php" afterPath="$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php" afterPath="$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php" />
       <change beforePath="$PROJECT_DIR$/src/Samknows/Model/LoadDataModel.php" afterPath="$PROJECT_DIR$/src/Samknows/Model/LoadDataModel.php" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Model/SearchModel.php" afterPath="$PROJECT_DIR$/src/Samknows/Model/SearchModel.php" />
       <change beforePath="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" afterPath="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Samknows.php" afterPath="$PROJECT_DIR$/src/Samknows/Samknows.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -83,8 +79,8 @@
       <file leaf-file-name="AggregateModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+            <state relative-caret-position="296">
+              <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding>
                 <element signature="e#34#68#0#PHP" expanded="true" />
               </folding>
@@ -95,20 +91,18 @@
       <file leaf-file-name="DataPoint.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="215" column="5" lean-forward="true" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
-              <folding>
-                <element signature="e#39#89#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="454">
+              <caret line="212" column="57" lean-forward="false" selection-start-line="212" selection-start-column="57" selection-end-line="212" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadDataModel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoadDataModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Model/LoadDataModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="478">
+              <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -118,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/src/Samknows/Factory/Model/AggregateModelFactory.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -127,7 +121,7 @@
       <file leaf-file-name="SearchModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Model/SearchModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
+            <state relative-caret-position="594">
               <caret line="99" column="54" lean-forward="false" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
               <folding>
                 <element signature="e#34#68#0#PHP" expanded="true" />
@@ -139,8 +133,8 @@
       <file leaf-file-name="SearchCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="62" column="21" lean-forward="true" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state relative-caret-position="700">
+              <caret line="91" column="9" lean-forward="true" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -150,17 +144,17 @@
         <entry file="file://$PROJECT_DIR$/src/Samknows/Samknows.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AggregateCommand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AggregateCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="734">
-              <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+            <state relative-caret-position="384">
+              <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
               <folding>
                 <element signature="e#36#82#0#PHP" expanded="true" />
               </folding>
@@ -168,14 +162,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadDataModelFactory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Samknows/Factory/Model/LoadDataModelFactory.php">
+      <file leaf-file-name="FixtureCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Samknows/Command/FixtureCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-              <folding>
-                <element signature="e#42#75#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-50">
+              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,8 +175,8 @@
       <file leaf-file-name="LoadDataCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="63" column="38" lean-forward="true" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+            <state relative-caret-position="384">
+              <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -201,13 +193,24 @@
       <find>createProgressBar(100)</find>
       <find>io</find>
       <find>$io</find>
+      <find>\Samknows\PROGRESS_BAR_PERCENTAGE</find>
+      <find>100 /</find>
       <find>$progressStep</find>
     </findStrings>
     <replaceStrings>
       <replace>aggregateCommand</replace>
       <replace>SearchCommand</replace>
       <replace>createProgressbar(\Samknows\PROGRESS_BAR_PERCENTAGE)</replace>
+      <replace>100 / Samknows\PROGRESS_BAR_PERCENTAGE</replace>
+      <replace>\Samknows\PROGRESS_BAR_PERCENTAGE /</replace>
     </replaceStrings>
+  </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="pwd" />
+      <command text="echo $SHELL;" />
+      <command text="php command.php app:search -u 2 -t 1 -m packet_loss" />
+    </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -229,10 +232,11 @@
         <option value="$PROJECT_DIR$/src/Samknows/Samknows.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Model/SearchModel.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php" />
+        <option value="$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php" />
+        <option value="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" />
+        <option value="$PROJECT_DIR$/src/Samknows/Command/FixtureCommand.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Model/LoadDataModel.php" />
-        <option value="$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php" />
-        <option value="$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php" />
       </list>
     </option>
   </component>
@@ -469,18 +473,19 @@
       <workItem from="1520200610473" duration="4874000" />
       <workItem from="1520244746872" duration="694000" />
       <workItem from="1520280620468" duration="144000" />
-      <workItem from="1520282326133" duration="3327000" />
+      <workItem from="1520282326133" duration="3524000" />
+      <workItem from="1520295340222" duration="1762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16790000" />
+    <option name="totallyTimeSpent" value="18749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.46345258" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.45567653" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -488,7 +493,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5365474" order="1" side_tool="true" content_ui="tabs" x="512" y="76" width="341" height="643" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5443235" order="1" side_tool="true" content_ui="tabs" x="512" y="76" width="341" height="643" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5054432" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -496,6 +501,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -828,25 +834,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/FixtureCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Factory/Model/AggregateModelFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Factory/Model/LoadDataModelFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="56">
           <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding>
             <element signature="e#42#75#0#PHP" expanded="true" />
@@ -854,17 +844,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="212" column="57" lean-forward="false" selection-start-line="212" selection-start-column="57" selection-end-line="212" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Factory/Model/AggregateModelFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Samknows.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+          <folding>
+            <element signature="e#36#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/FixtureCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="91" column="9" lean-forward="true" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="e#34#68#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Model/SearchModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
+        <state relative-caret-position="594">
           <caret line="99" column="54" lean-forward="false" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
           <folding>
             <element signature="e#34#68#0#PHP" expanded="true" />
@@ -872,57 +922,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="62" column="21" lean-forward="true" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="63" column="38" lean-forward="true" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Model/LoadDataModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        <state relative-caret-position="478">
+          <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Repository/DataPoint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="215" column="5" lean-forward="true" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
-          <folding>
-            <element signature="e#34#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
-          <folding>
-            <element signature="e#36#82#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

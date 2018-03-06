@@ -22,10 +22,6 @@ class FixtureCommand
         $output->writeln('Beginning to ' . $action);
         switch ($action) {
             case 'generate':
-                if ($help) {
-                    $output->writeln('Generates a set of fixtures');
-                    break;
-                }
                 $entityManager = $this->getEntityManager();
                 $objects = Fixtures::load($this->getConfig(), $entityManager);
                 foreach ($objects as $entity) {
