@@ -6,7 +6,7 @@ use Samknows\Command\AggregateCommand;
 use Samknows\Tests\Setup\CommadTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
-final class aggregateCommandTest extends CommadTestCase
+final class AggregateCommandTest extends CommadTestCase
 {
 
     public function setUp()/* The :void return type declaration that should be here would cause a BC issue */

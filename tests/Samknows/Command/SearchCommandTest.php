@@ -3,10 +3,10 @@
 namespace Samknows\Tests\Command;
 
 use Samknows\Command\SearchCommand;
-use Samknows\Tests\Setup\CommadTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
+use PHPUnit\Framework\TestCase;
 
-final class SearchCommandTest extends CommadTestCase
+final class SearchCommandTest extends TestCase
 {
 
     public function setUp()/* The :void return type declaration that should be here would cause a BC issue */
