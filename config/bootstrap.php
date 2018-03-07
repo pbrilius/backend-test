@@ -1,7 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/metaConfig.php';
+require 'autoloader.php';
 
 use DI\ContainerBuilder;
 use Doctrine\Common\Cache\ArrayCache;

@@ -45,3 +45,9 @@ and aggregation allows and empowers more thorough and faster storing,
 reading and displaying to the UI
 * The display of the aggregated rows is formatted to the defined float type
 decimal length
+
+# Testing
+
+```
+vendor/binm/phpunit --bootstrap vendor/autoload.php
+```
