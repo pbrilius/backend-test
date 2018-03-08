@@ -16,3 +16,5 @@ if (extension_loaded('apcu') && $applicationMode == 'production') {
 $builder->writeProxiesToFile(true, $proxiesFile);
 $builder->addDefinitions(__DIR__ . '/config.php');
 $container = $builder->build();
+
+return $container;

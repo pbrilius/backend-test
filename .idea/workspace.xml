@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba0d6e5-1669-402a-a88e-bd1f635e759b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/autoloader.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/config/bootstrap.php" afterPath="$PROJECT_DIR$/config/bootstrap.php" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php" afterPath="$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php" />
       <change beforePath="$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php" afterPath="$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php" />
+      <change beforePath="$PROJECT_DIR$/tests/Samknows/Setup/CommadTestCase.php" afterPath="$PROJECT_DIR$/tests/Samknows/Setup/CommadTestCase.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -80,14 +78,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="210">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cli-config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/cli-config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,9 +113,23 @@
       <file leaf-file-name="SearchCommandTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Samknows/Command/SearchCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="e#42#77#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommadTestCase.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Samknows/Setup/CommadTestCase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <folding>
+                <element signature="e#40#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,27 +148,7 @@
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="metaConfig.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/metaConfig.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -156,7 +158,7 @@
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="e#42#77#0#PHP" expanded="true" />
               </folding>
@@ -164,11 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommadTestCase.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommadTestCase.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+            <state relative-caret-position="182">
+              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -177,8 +179,8 @@
       <file leaf-file-name="AggregateCommandTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="406">
+              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -246,6 +248,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php" />
         <option value="$PROJECT_DIR$/config/autoloader.php" />
+        <option value="$PROJECT_DIR$/tests/Samknows/Setup/CommadTestCase.php" />
         <option value="$PROJECT_DIR$/config/bootstrap.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php" />
       </list>
@@ -320,8 +323,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="20" />
-    <option name="y" value="120" />
+    <option name="x" value="341" />
+    <option name="y" value="301" />
     <option name="width" value="1346" />
     <option name="height" value="551" />
   </component>
@@ -343,6 +346,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -392,6 +397,13 @@
             <path>
               <item name="backend-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend-test" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Samknows" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tool" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="backend-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend-test" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -418,8 +430,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -489,6 +499,10 @@
       <workItem from="1520432858655" duration="1248000" />
       <workItem from="1520447219511" duration="332000" />
       <workItem from="1520453616042" duration="5656000" />
+      <workItem from="1520502074205" duration="591000" />
+      <workItem from="1520507413223" duration="594000" />
+      <workItem from="1520516516745" duration="577000" />
+      <workItem from="1520544399895" duration="2829000" />
     </task>
     <servers />
   </component>
@@ -504,20 +518,20 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32538000" />
+    <option name="totallyTimeSpent" value="37129000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="120" width="1366" height="741" extended-state="6" />
+    <frame x="341" y="301" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.40902022" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.3934681" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.59097975" order="1" side_tool="true" content_ui="tabs" x="512" y="76" width="341" height="643" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.60653186" order="1" side_tool="true" content_ui="tabs" x="512" y="76" width="341" height="643" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5054432" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -526,6 +540,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -778,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,25 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/cli-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Samknows/Setup/CommadTestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#71#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,9 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#42#80#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,7 +851,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="240">
             <caret line="37" column="75" lean-forward="true" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -880,7 +867,7 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -893,18 +880,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Samknows/Command/SearchCommandTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="406">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -912,7 +891,7 @@
     <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -920,10 +899,18 @@
     <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="e#42#77#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cli-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -935,21 +922,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php">
+    <entry file="file://$PROJECT_DIR$/tests/Samknows/Setup/CommadTestCase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="196">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="e#40#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Samknows/Command/SearchCommandTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="e#42#77#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
