@@ -17,7 +17,7 @@ final class SearchCommandTest extends CommadTestCase
     public function testCanBeCreated(): void
     {
         $container = $this->getContainer();
-        $this->assertEquals(SearchCommand::class, $container->get(SearchCommand::class));
+        $this->assertEquals(SearchCommand::class, get_class($container->get(SearchCommand::class)));
     }
 
     public function testCanBeNamed()
@@ -40,7 +40,7 @@ final class SearchCommandTest extends CommadTestCase
     {
         $container = $this->getContainer();
         /* @var $searchCommand SearchCommand */
-        $searchCommand = $container-get(SearchCommand::class);
+        $searchCommand = $container->get(SearchCommand::class);
         $this->assertStringMatchesFormat('[\w\s\.]{8,}', $searchCommand->getDescription());
     }
 
