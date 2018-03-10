@@ -2,7 +2,7 @@
 xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.3/phpunit.xsd"
 backupGlobals="true"
 backupStaticAttributes="false"
-bootstrap="config/bootstrap.php"
+bootstrap="vendor/autoload.php"
 cacheTokens="false"
 colors="false"
 convertErrorsToExceptions="true"
@@ -20,4 +20,11 @@ stimeoutForSmallTests="1"
 timeoutForMediumTests="10"
 timeoutForLargeTests="60"
 verbose="false">
+    <testsuites>
+        <testsuite name="commands">
+            <file>src/Samknows/Tests/Command/LoadDataCommandTest.php</file>
+            <file>src/Samknows/Tests/Command/AggregateCommand.php</file>
+            <file>src/Samknows/Tests/Command/SearchCommandTest.php</file>
+        </testsuite>
+    </testsuites>
 </phpunit>
