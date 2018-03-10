@@ -49,5 +49,5 @@ decimal length
 # Testing
 
 ```
-vendor/binm/phpunit --bootstrap vendor/autoload.php
+vendor/bin/phpunit --testsuite commands
 ```
