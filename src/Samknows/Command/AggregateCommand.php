@@ -64,6 +64,7 @@ class AggregateCommand extends Command
         try {
             $io->createProgressbar(\Samknows\PROGRESS_BAR_PERCENTAGE);
             $io->progressStart();
+            $this->aggregateModel->setIo($io);
             $this->aggregateModel->aggregateDataPoints();
             $io->progressFinish();
             $io->success('Data aggregated');
