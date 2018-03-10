@@ -2,7 +2,7 @@
 
 namespace Samknows\Tests\Command;
 
-use Samknows\Command\loadDataCommand;
+use Samknows\Command\LoadDataCommand;
 use Samknows\Tests\Setup\CommadTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
@@ -53,10 +53,10 @@ final class LoadDataCommandTest extends CommadTestCase
         $command = $application->find($loadDataCommand->getName());
 
         $commandTester = new CommandTester($command);
-        $commandTester->execute(array(
+        $commandTester->execute([
             'command'  => $command->getName(),
-            'data-file' => 'data/testdata.json',
-        ));
+            'data-file' => 'data/test-data-tiny.json',
+        ]);
 
         $output = $commandTester->getDisplay();
         $this->assertContains('Data loaded', $output);

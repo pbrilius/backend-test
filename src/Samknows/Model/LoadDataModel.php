@@ -64,13 +64,18 @@ class LoadDataModel
         $dataPointsSum = 0;
         foreach ($decodedData as $unit) {
             foreach (\Samknows\METRICS as $metricsUnit) {
-                $dataPointsSum += count($unit->metrics->{$metricsUnit});
+                if (!empty($unit->metrics->{$metricsUnit})) {
+                    $dataPointsSum += count($unit->metrics->{$metricsUnit});
+                }
             }
         }
         $progressStep = \Samknows\PROGRESS_BAR_PERCENTAGE / $dataPointsSum;
         $progressStepSum = 0;
         foreach ($decodedData as $unit) {
             foreach (\Samknows\METRICS as $metricsUnit) {
+                if (empty($unit->metrics->{$metricsUnit})) {
+                    continue;
+                }
                 foreach ($unit->metrics->{$metricsUnit} as $dataEntry) {
                     $dataPoint = new DataPointEntity();
                     call_user_func([$dataPoint, 'set' . str_replace('_', '', mb_convert_case($metricsUnit, MB_CASE_TITLE))],
