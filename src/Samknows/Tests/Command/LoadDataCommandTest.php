@@ -17,7 +17,7 @@ final class LoadDataCommandTest extends CommadTestCase
     public function testCanBeCreated(): void
     {
         $container = $this->getContainer();
-        $this->assertEquals(loadDataCommand::class, get_class($container->get(LoadDataCommand::class)));
+        $this->assertEquals(LoadDataCommand::class, get_class($container->get(LoadDataCommand::class)));
     }
 
     public function testCanBeNamed()
@@ -55,7 +55,7 @@ final class LoadDataCommandTest extends CommadTestCase
         $commandTester = new CommandTester($command);
         $commandTester->execute(array(
             'command'  => $command->getName(),
-            'data-file' => 'data/test-data.json',
+            'data-file' => 'data/testdata.json',
         ));
 
         $output = $commandTester->getDisplay();

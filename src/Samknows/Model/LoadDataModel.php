@@ -57,6 +57,10 @@ class LoadDataModel
     {
         $entityManager = $this->getEntityManager();
         $decodedData = json_decode(file_get_contents($this->documentRoot . '/' . $fileName));
+        $io = $this->getIo();
+        if (empty($decodedData)) {
+            $io->progressAdvance(\Samknows\PROGRESS_BAR_PERCENTAGE);
+        }
         $dataPointsSum = 0;
         foreach ($decodedData as $unit) {
             foreach (\Samknows\METRICS as $metricsUnit) {
@@ -65,7 +69,6 @@ class LoadDataModel
         }
         $progressStep = \Samknows\PROGRESS_BAR_PERCENTAGE / $dataPointsSum;
         $progressStepSum = 0;
-        $io = $this->getIo();
         foreach ($decodedData as $unit) {
             foreach (\Samknows\METRICS as $metricsUnit) {
                 foreach ($unit->metrics->{$metricsUnit} as $dataEntry) {

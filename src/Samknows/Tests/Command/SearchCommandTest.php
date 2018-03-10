@@ -60,8 +60,6 @@ final class SearchCommandTest extends CommadTestCase
         ]);
 
         $output = $commandTester->getDisplay();
-        var_dump('$output a1');
-        var_dump($output);
         $this->assertContains('Found data', $output);
     }
 
