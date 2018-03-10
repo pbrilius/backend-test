@@ -65,12 +65,18 @@ class SearchModel
         unset($criteria['metric']);
         $criteria['unitId'] = $criteria['unit'];
         unset($criteria['unit']);
+        $stepAdvance = 20;
         $io = $this->getIo();
-        $io->progressAdvance(20);
+        $io->progressAdvance($stepAdvance);
         $metrics = $aggregatedDataPointsRepository->findBy($criteria);
         $filteredMetrics = [];
-        $progressStep = 80 / (count($metrics) * count(\Samknows\INDICATORS));
+        if (!empty($metrics)) {
+            $progressStep = (\Samknows\PROGRESS_BAR_PERCENTAGE - $stepAdvance) / (count($metrics) * count(\Samknows\INDICATORS));
+        } else {
+            $progressStep = \Samknows\PROGRESS_BAR_PERCENTAGE - $stepAdvance;
+        }
         $progressStepSum = 0;
+
         /* @var $row AggregatedDataPoints */
         foreach ($metrics as $row) {
             $filteredMetricsRow = [

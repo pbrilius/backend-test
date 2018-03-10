@@ -33,7 +33,7 @@ final class SearchCommandTest extends CommadTestCase
         $container = $this->getContainer();
         /* @var $searchCommand SearchCommand */
         $searchCommand = $container->get(SearchCommand::class);
-        $this->assertGreaterThanOrEqual(3, $searchCommand->getDefinition()->getArgumentCount());
+        $this->assertGreaterThanOrEqual(3, count($searchCommand->getDefinition()->getOptions()));
     }
 
     public function testCanBeCreatedWithDescription()
@@ -41,7 +41,7 @@ final class SearchCommandTest extends CommadTestCase
         $container = $this->getContainer();
         /* @var $searchCommand SearchCommand */
         $searchCommand = $container->get(SearchCommand::class);
-        $this->assertStringMatchesFormat('[\w\s\.]{8,}', $searchCommand->getDescription());
+        $this->assertRegExp('/[\w\s\.]{8,}/', $searchCommand->getDescription());
     }
 
     public function testExecute()
@@ -51,16 +51,17 @@ final class SearchCommandTest extends CommadTestCase
         $searchCommand = $container->get(SearchCommand::class);
         $application = $this->getApplication();
         $command = $application->find($searchCommand->getName());
-
         $commandTester = new CommandTester($command);
-        $commandTester->execute(array(
+        $commandTester->execute([
             'command'  => $command->getName(),
-            'unit' => '5',
-            'hour' => '16',
-            'metric' => 'download',
-        ));
+            '--unit' => '5',
+            '--hour' => '16',
+            '--metric' => 'download',
+        ]);
 
         $output = $commandTester->getDisplay();
+        var_dump('$output a1');
+        var_dump($output);
         $this->assertContains('Found data', $output);
     }
 

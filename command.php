@@ -30,8 +30,6 @@ $application->add($container->get(SearchCommand::class));
 $application->setDefaultCommand($container
         ->get(LoaddataCommand::class)
         ->getName(), false);
-//var_dump($container->get(LoadDataCommand::class)->getDefinition());
-//exit;
 $application->run();
 
 
