@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cba0d6e5-1669-402a-a88e-bd1f635e759b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php" afterPath="$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php" />
+      <change beforePath="$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php" afterPath="$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -79,22 +79,24 @@
       <file leaf-file-name="SearchCommandTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="258">
+              <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding>
                 <element signature="e#42#77#0#PHP" expanded="true" />
-                <marker date="1520696601164" expanded="true" signature="231:413" ph="..." />
+                <marker date="1520701265484" expanded="true" signature="231:413" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadDataCommandTest.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoadDataCommandTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="302">
+              <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+              <folding>
+                <element signature="e#42#79#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AggregateCommandTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AggregateCommandTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+            <state relative-caret-position="454">
+              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
                 <element signature="e#42#80#0#PHP" expanded="true" />
               </folding>
@@ -174,8 +176,8 @@
       <file leaf-file-name="LoadDataCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+            <state relative-caret-position="174">
+              <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -202,6 +204,7 @@
       <find>$criteria test b1</find>
       <find>var_dump</find>
       <find>var_d</find>
+      <find>loadDataCommand</find>
     </findStrings>
     <replaceStrings>
       <replace>aggregateCommand</replace>
@@ -249,12 +252,13 @@
         <option value="$PROJECT_DIR$/command.php" />
         <option value="$PROJECT_DIR$/config/bootstrap.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Tests/Setup/CommadTestCase.php" />
-        <option value="$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Model/SearchModel.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Command/AggregateCommand.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Model/AggregateModel.php" />
         <option value="$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php" />
+        <option value="$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php" />
+        <option value="$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php" />
       </list>
     </option>
   </component>
@@ -500,7 +504,7 @@
       <workItem from="1520626237521" duration="4000" />
       <workItem from="1520687714437" duration="625000" />
       <workItem from="1520689626018" duration="3468000" />
-      <workItem from="1520700109795" duration="620000" />
+      <workItem from="1520700109795" duration="1272000" />
     </task>
     <servers />
   </component>
@@ -516,7 +520,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47346000" />
+    <option name="totallyTimeSpent" value="47998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="341" y="301" width="1366" height="741" extended-state="6" />
@@ -562,8 +566,13 @@
           <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -864,14 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Command/SearchCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -888,31 +889,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="e#42#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Samknows/Command/LoadDataCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/SearchCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="258">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding>
             <element signature="e#42#77#0#PHP" expanded="true" />
-            <marker date="1520696601164" expanded="true" signature="231:413" ph="..." />
+            <marker date="1520701265484" expanded="true" signature="231:413" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/LoadDataCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Samknows/Tests/Command/AggregateCommandTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+        <state relative-caret-position="302">
+          <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
           <folding>
-            <element signature="e#42#80#0#PHP" expanded="true" />
+            <element signature="e#42#79#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

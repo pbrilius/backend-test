@@ -17,7 +17,7 @@ final class LoadDataCommandTest extends CommadTestCase
     public function testCanBeCreated(): void
     {
         $container = $this->getContainer();
-        $this->assertEquals(LoadDataCommand::class, $container->get(LoadDataCommand::class));
+        $this->assertEquals(loadDataCommand::class, get_class($container->get(LoadDataCommand::class)));
     }
 
     public function testCanBeNamed()
@@ -40,8 +40,8 @@ final class LoadDataCommandTest extends CommadTestCase
     {
         $container = $this->getContainer();
         /* @var $loadDataCommand LoadDataCommand */
-        $loadDataCommand = $container-get(LoadDataCommand::class);
-        $this->assertStringMatchesFormat('[\w\s\.]{8,}', $loadDataCommand->getDescription());
+        $loadDataCommand = $container->get(LoadDataCommand::class);
+        $this->assertRegExp('/[\w\s\.]{8,}/', $loadDataCommand->getDescription());
     }
 
     public function testExecute()
