@@ -1,7 +1,7 @@
 # Installation
 ```
 composer install
-cp config/services.yml.dist config/services.yml
+cp config/config.php.dist config/config.php
 vendor/bin/doctrine orm:schema-tool:create
 vendor/bin/doctrine orm:validate-schema
 ```
