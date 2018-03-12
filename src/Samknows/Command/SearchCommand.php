@@ -49,7 +49,7 @@ class SearchCommand extends Command
                     ])
                 )
                 ->setHelp('This command allows search data for entries'
-                        . ' mathing search conditions')
+                        . ' matching search conditions')
         ;
     }
     

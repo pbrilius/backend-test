@@ -32,7 +32,7 @@ class DataPoint extends DataPointRepository
         $qb->groupBy('dp.unitId,'
             . ' formatted_date'
         );
-        echo 'test cp 8';
+
         $qb->orderBy('dp.unitId,'
             . ' formatted_date'
         );
@@ -62,8 +62,9 @@ class DataPoint extends DataPointRepository
         $aggregatedFields = $qb
             ->getQuery()
             ->getArrayResult();
-        $io->progressAdvance(20);
-        $progressStep = 20 / count($aggregatedFields);
+        $progressAdvance = 20;
+        $io->progressAdvance($progressAdvance);
+        $progressStep = $progressAdvance / count($aggregatedFields);
         $progressStepSum = 0;
         $em = $this->getEntityManager();
         foreach ($aggregatedFields as $row) {

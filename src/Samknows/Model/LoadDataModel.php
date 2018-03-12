@@ -61,6 +61,7 @@ class LoadDataModel
         if (empty($decodedData)) {
             $io->progressAdvance(\Samknows\PROGRESS_BAR_PERCENTAGE);
         }
+        return;
         $dataPointsSum = 0;
         foreach ($decodedData as $unit) {
             foreach (\Samknows\METRICS as $metricsUnit) {
