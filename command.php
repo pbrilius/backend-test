@@ -2,7 +2,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/src/Samknows/Samknows.php';
-require __DIR__ . '/config/metaConfig.php';
+require __DIR__ . '/config/meta-config.php';
 
 use Samknows\Command\LoadDataCommand;
 use Samknows\Command\AggregateCommand;
