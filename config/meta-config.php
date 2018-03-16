@@ -9,7 +9,7 @@ if ($applicationMode == 'development') {
         function shutdown()
         {
             if (error_get_last()) {
-                echo error_get_last() . "\n";
+                var_export(error_get_last());
             }
         }
     }
