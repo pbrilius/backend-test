@@ -8,8 +8,9 @@ if ($applicationMode == 'development') {
     if (!function_exists('shutdown')) {
         function shutdown()
         {
-            if (error_get_last()) {
-                var_export(error_get_last());
+            $errorLast = error_get_last();
+            if (!empty($errorLast)) {
+                var_export($errorLast);
             }
         }
     }
