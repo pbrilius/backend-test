@@ -36,6 +36,12 @@ class CommadTestCase extends TestCase
         $this->setApplication($application);
     }
 
+    public function tearDown()
+    {
+        $this->setContainer(null);
+        $this->setApplication(null);
+    }
+
     /**
      * @return Container
      */
