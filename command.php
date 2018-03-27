@@ -1,8 +1,6 @@
 #!/usr/bin/env php
 <?php
-require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/src/Samknows/Samknows.php';
-require __DIR__ . '/config/meta-config.php';
+require __DIR__ . '/config/bootstrap.php';
 
 use Samknows\Command\LoadDataCommand;
 use Samknows\Command\AggregateCommand;
