@@ -15,7 +15,7 @@ zcat backup/{YYY-MM-DD}-backend-test.sql.gz | mysql -nEv -ubackend_test -pbacken
 > The commands available for usage:
 * `php command.php app:load-data "data/testdata.json"`
 * `php command.php app:aggregate`
-* `php command.php app:search --unit=<unitId> --metric=<(download|upload|packet_loss|latency)> --hour=<1..24]>`
+* `php command.php app:search --unit=<unitId> --metric=<(download|upload|packet_loss|latency)> --hour=<[1..24]>`
 
 # Elaboration
 
